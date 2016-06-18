@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5d0cea1d-e0ad-4532-8ba9-a17a494842de" name="Default" comment="" />
+    <ignored path=".iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project ''. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project ''." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'main'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Bundles the project as a distribution." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildPlugin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Creates a folder containing the plugins to run Intellij IDEA with." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareTestsSandbox" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'test'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Creates a folder containing the plugins to run Intellij IDEA with." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareSandbox" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project ''. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Publish plugin distribution on plugins.jetbrains.com." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="publishPlugin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes JVM resources 'main:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project ''." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the source set 'test'.kotlin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project ''." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project ''." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes JVM resources 'test:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the source set 'main'.kotlin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs Intellij IDEA with installed plugin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="runIdea" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project ''." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../breakpoints-manager" value="2926130182000" />
+        <entry key="$PROJECT_DIR$/../butterknife" value="8770626930000" />
+        <entry key="$PROJECT_DIR$/../clear-ignore-this-update" value="2925787266000" />
+        <entry key="$PROJECT_DIR$" value="2927688900000" />
+        <entry key="$PROJECT_DIR$/../open-commit-on-github" value="2920328979000" />
+        <entry key="$PROJECT_DIR$/../permissions-dispatcher-plugin" value="2922849347000" />
+        <entry key="$PROJECT_DIR$/../show-issue" value="2922158102000" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.0.2/b641fa40fab28a4433016e33cab138bb7b725ca4/kotlin-gradle-plugin-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.0.2/5debd813305c36f1c61d18110fdc13a5f663bbd/kotlin-gradle-plugin-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.org.jetbrains/gradle-intellij-plugin/0.0.43/9bbdaa704e6a41eec410273e067e7ab8887c0e11/gradle-intellij-plugin-0.0.43.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.2/81502b079b2472f09df93ab0f2189de0d13f6cb4/kotlin-stdlib-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.2/22063f19bfd8e50f21fc310842a91ff5b31bb272/kotlin-stdlib-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.0.2/13da3187204ff012d99f11df8ba8e1e40a8bd3f7/kotlin-android-extensions-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.0.2/aa5c3dcba43516a11146ca50375d340a330ed625/kotlin-android-extensions-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-core/1.0.2/63bdf40e465d484cc0f1de2bfdd54ed4d380c17c/kotlin-gradle-plugin-core-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-core/1.0.2/5ce0c7c70e5e226a8640e5be1fbdff25bc491b9/kotlin-gradle-plugin-core-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.0.2/d286b05de509ef27408a58a6f1d4ffaefeb1d7bf/kotlin-gradle-plugin-api-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.0.2/e4fd4b778bb4297306aa62ed9719523bb785cfbc/kotlin-gradle-plugin-api-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy.modules.http-builder/http-builder/0.7.1/a7396f0103337835621526d95021afc06c65c7b2/http-builder-0.7.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy.modules.http-builder/http-builder/0.7.1/a21771ae3da5ce9f5c4d7a60c1e716666aa2acf9/http-builder-0.7.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/2aab83661676c842d50995fe934550e3e23b3c6/httpmime-4.5.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/96823b9421ebb9f490dec837d9f96134e864e3a7/httpmime-4.5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.2/7d8382a1dcf97e4481a6d267bbd26ad9d4e60b9e/kotlin-runtime-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.2/8ec2d49a780ddba5e9b6860a72969e4d5bbc0c55/kotlin-runtime-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/f2d8698c46d1167ff24b06a840a87d91a02db891/commons-io-2.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.0.2/ea8a16e96407a2d2cd7227eaf4a702c407c8fe08/kotlin-compiler-embeddable-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.0.2/fedf16a2961c4d63c8b4746bef269a12049bf37a/kotlin-compiler-embeddable-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing/1.0.2/a571804a29b105cdbadff68913c0ed94e21ab291/kotlin-annotation-processing-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing/1.0.2/e9c5802f2ea60d581fb2ccb6e55ccec79fa0d7c4/kotlin-annotation-processing-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.1/c0ecd55724129bbd48850314b4ff8a360d670662/httpclient-4.5.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.1/7e3cecc566df91338c6c67883b89ddd05a17db43/httpclient-4.5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.json-lib/json-lib/2.3/f35340c0a0380141f62c72b76c8fb4bfa638d8c1/json-lib-2.3-jdk15.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.16/2d40ea21fae95418331ddc66efb6744a38bf59a/nekohtml-1.9.16-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.16/61e35204e5a8fdb864152f84e2e3b33ab56f50ab/nekohtml-1.9.16.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-resolver/xml-resolver/1.2/6b72432ea1c5296783007365bb7c9a6b39dfb730/xml-resolver-1.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-resolver/xml-resolver/1.2/3d0f97750b3a03e0971831566067754ba4bfd68c/xml-resolver-1.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.3/b972b5dfd2db7d41d76a6fc5445852522a136e2e/httpcore-4.4.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.3/e876a79d561e5c6207b78d347e198c8c4531a5e5/httpcore-4.4.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.8.0/2818502bbb50bbcbd3f57e92a2bfe4d496f37688/commons-beanutils-1.8.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.8.0/c651d5103c649c12b20d53731643e5fffceb536/commons-beanutils-1.8.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.ezmorph/ezmorph/1.0.6/298992280d62b944afd0ae9bfe3329f5487dd434/ezmorph-1.0.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.ezmorph/ezmorph/1.0.6/1e55d2a0253ea37745d33062852fd2c90027432/ezmorph-1.0.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.9.1/7bc7e49ddfe4fb5f193ed37ecc96c12292c8ceb6/xercesImpl-2.9.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/d89105ccbe3fd823865330fd964233baf2b53e88/xml-apis-1.3.04-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/90b215f48fe42776c8c7f6e3509ec54e84fd65ef/xml-apis-1.3.04.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/jetty" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/open-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/sonar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/ui" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/ant-1.9.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/ant-launcher-1.9.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-base-services-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-base-services-groovy-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-cli-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-core-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-docs-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-launcher-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-messaging-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-model-core-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-model-groovy-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-native-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-open-api-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-resources-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-tooling-api-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-ui-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/gradle-wrapper-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/groovy-all-2.3.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-announce-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-antlr-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-build-comparison-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-build-init-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-code-quality-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-dependency-management-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-diagnostics-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-ear-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-ide-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-ide-native-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-ivy-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-jacoco-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-javascript-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-jetty-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-language-groovy-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-language-java-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-language-jvm-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-language-native-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-language-scala-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-maven-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-osgi-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-platform-base-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-platform-jvm-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-platform-native-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-platform-play-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-plugin-development-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-plugin-use-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-plugins-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-publish-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-reporting-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-resources-http-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-resources-s3-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-resources-sftp-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-scala-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-signing-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-sonar-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-test-kit-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-testing-native-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/gradle-tooling-api-builders-2.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.7-all/4ryh47z6pv2tj9n03uiw8pzc6/gradle-2.7/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2491" />
+    <option name="height" value="1417" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin-intellij-plugin-wizard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin-intellij-plugin-wizard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin-intellij-plugin-wizard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5d0cea1d-e0ad-4532-8ba9-a17a494842de" name="Default" comment="" />
+      <created>1466263835732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1466263835732</updated>
+      <workItem from="1466263836893" duration="299000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="299000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2491" height="1417" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Breakpoints Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24989791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
