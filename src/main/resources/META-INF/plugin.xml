@@ -1,6 +1,6 @@
 <idea-plugin version="2">
-  <id>com.github.shiraji.</id>
-  <name></name>
+  <id>com.github.shiraji.kipw</id>
+  <name>fooo</name>
   <vendor email="isogai.shiraji@gmail.com" url="https://github.com/shiraji">Shiraji</vendor>
 
   <description><![CDATA[
@@ -12,7 +12,10 @@
 
   <idea-version since-build="143"/>
 
+  <depends>org.jetbrains.kotlin</depends>
+
   <extensions defaultExtensionNs="com.intellij">
+    <projectTemplatesFactory implementation="com.github.shiraji.kipw.IntelliJGradlePluginTemplatesFactory"/>
   </extensions>
 
   <application-components>
