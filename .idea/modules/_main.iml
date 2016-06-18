@@ -117,6 +117,13 @@
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/lib/xmlrpc-2.0.jar!/" />
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/lib/xpp3-1.1.4-min.jar!/" />
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/lib/xstream-1.4.8.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/javax.inject.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/kotlin-android-extensions-compiler-plugin.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/kotlin-android-extensions-plugin.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/kotlin-plugin.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/kotlin-reflect.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/kotlin-runtime.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2016.1.3/c36c34088b8d770d73fe97760cdd47ab86ea00b/ideaIC-2016.1.3/plugins/Kotlin/lib/markdown.jar!/" />
           <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
