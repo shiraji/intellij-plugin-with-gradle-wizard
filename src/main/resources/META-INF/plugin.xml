@@ -13,9 +13,11 @@
   <idea-version since-build="143"/>
 
   <depends>org.jetbrains.kotlin</depends>
+  <depends>DevKit</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <projectTemplatesFactory implementation="com.github.shiraji.kipw.IntelliJGradlePluginTemplatesFactory"/>
+    <moduleType id="DEMO_MODULE_TYPE" implementationClass="com.github.shiraji.kipw.sample.DemoModuleType"/>
   </extensions>
 
   <application-components>

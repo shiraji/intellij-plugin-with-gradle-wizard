@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="kotlin-intellij-plugin-wizard [runIdea]" type="GradleRunConfiguration" factoryName="Gradle" singleton="true">
+  <configuration default="false" name="intellij-plugin-with-gradle-wizard [runIdea]" type="GradleRunConfiguration" factoryName="Gradle" singleton="true">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />

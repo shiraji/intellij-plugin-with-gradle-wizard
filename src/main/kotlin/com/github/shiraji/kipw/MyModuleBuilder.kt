@@ -4,13 +4,14 @@ import com.intellij.ide.util.projectWizard.JavaModuleBuilder
 import com.intellij.ide.util.projectWizard.ModuleWizardStep
 import com.intellij.ide.util.projectWizard.SettingsStep
 import com.intellij.ide.util.projectWizard.WizardContext
+import com.intellij.openapi.projectRoots.SdkTypeId
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider
+import com.intellij.openapi.util.Condition
 import org.jetbrains.kotlin.idea.KotlinIcons
-import org.jetbrains.kotlin.idea.framework.KotlinModuleSettingStep
 import org.jetbrains.kotlin.resolve.TargetPlatform
 
 class MyModuleBuilder(val targetPlatform: TargetPlatform, val builderName: String, val builderDescription: String) : JavaModuleBuilder() {
-    override fun getBuilderId() = "kotlin.module.builder"
+    override fun getBuilderId() = "myModuleBuilder"
     override fun getName() = builderName
     override fun getPresentableName() = builderName
     override fun getDescription() = builderDescription
@@ -20,6 +21,7 @@ class MyModuleBuilder(val targetPlatform: TargetPlatform, val builderName: Strin
     override fun createWizardSteps(wizardContext: WizardContext, modulesProvider: ModulesProvider) = ModuleWizardStep.EMPTY_ARRAY
 
     override fun modifySettingsStep(settingsStep: SettingsStep): ModuleWizardStep {
-        return KotlinModuleSettingStep(targetPlatform, this, settingsStep)
+//        return KotlinModuleSettingStep(targetPlatform, this, settingsStep)
+        return MyModuleWizardStep(settingsStep, this, Condition<SdkTypeId> { isSuitableSdkType(it) })
     }
 }
