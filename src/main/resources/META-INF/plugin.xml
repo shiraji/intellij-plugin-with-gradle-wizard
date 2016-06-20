@@ -14,6 +14,7 @@
 
   <depends>org.jetbrains.kotlin</depends>
   <depends>DevKit</depends>
+  <depends>org.jetbrains.plugins.gradle</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <projectTemplatesFactory implementation="com.github.shiraji.kipw.IntelliJGradlePluginTemplatesFactory"/>
