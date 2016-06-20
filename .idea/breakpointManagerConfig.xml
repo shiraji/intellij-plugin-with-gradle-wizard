@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BreakpointManagerConfig">
+    <option name="entities">
+      <map>
+        <entry>
+          <key>
+            <breakpoints-set-info>
+              <option name="id" value="d0daa50e-d547-4477-acea-1d5ebf4b5630" />
+              <option name="name" value="DemoModuleWizard" />
+            </breakpoints-set-info>
+          </key>
+          <value>
+            <list>
+              <breakpoint-info>
+                <option name="enabled" value="true" />
+                <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/kotlin/com/github/shiraji/kipw/sample/DemoModuleBuilder.kt" />
+                <option name="line" value="19" />
+                <option name="typeId" value="kotlin-line" />
+              </breakpoint-info>
+              <breakpoint-info>
+                <option name="enabled" value="true" />
+                <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/kotlin/com/github/shiraji/kipw/sample/DemoModuleBuilder.kt" />
+                <option name="line" value="32" />
+                <option name="typeId" value="kotlin-line" />
+              </breakpoint-info>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
