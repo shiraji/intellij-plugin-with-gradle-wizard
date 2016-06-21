@@ -2,13 +2,20 @@ package com.github.shiraji.kipw.sample
 
 import com.intellij.ide.fileTemplates.FileTemplateManager
 import com.intellij.ide.fileTemplates.FileTemplateUtil
-import com.intellij.ide.util.projectWizard.JavaModuleBuilder
+import com.intellij.ide.util.projectWizard.ModuleWizardStep
 import com.intellij.ide.util.projectWizard.WizardContext
 import com.intellij.openapi.Disposable
+import com.intellij.openapi.externalSystem.model.ProjectSystemId
+import com.intellij.openapi.externalSystem.service.project.wizard.AbstractExternalModuleBuilder
+import com.intellij.openapi.externalSystem.service.project.wizard.ExternalModuleSettingsStep
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil
 import com.intellij.openapi.options.ConfigurationException
 import com.intellij.openapi.project.ex.ProjectManagerEx
+import com.intellij.openapi.projectRoots.JavaSdkType
+import com.intellij.openapi.projectRoots.SdkTypeId
 import com.intellij.openapi.roots.ModifiableRootModel
+import com.intellij.openapi.roots.ui.configuration.ModulesProvider
+import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.util.Key
 import com.intellij.openapi.util.io.FileUtil
 import com.intellij.openapi.util.io.FileUtilRt
@@ -19,11 +26,13 @@ import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 import org.jetbrains.plugins.gradle.frameworkSupport.BuildScriptDataBuilder
+import org.jetbrains.plugins.gradle.service.settings.GradleProjectSettingsControl
+import org.jetbrains.plugins.gradle.settings.GradleProjectSettings
 import org.jetbrains.plugins.gradle.util.GradleConstants
 import java.io.File
 import java.io.IOException
 
-class DemoModuleBuilder : JavaModuleBuilder() {
+class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Demo Module Type"), GradleProjectSettings()) {
 
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle";
     val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle";
@@ -147,6 +156,20 @@ class DemoModuleBuilder : JavaModuleBuilder() {
         VfsUtil.saveText(file, content)
     }
 
-    override fun getCustomOptionsStep(context: WizardContext?, parentDisposable: Disposable?) = DemoModuleWizardStep()
-}
+    lateinit var wizardContext: WizardContext
 
+    override fun createWizardSteps(wizardContext: WizardContext, modulesProvider: ModulesProvider): Array<out ModuleWizardStep>? {
+        this.wizardContext = wizardContext
+
+        return arrayOf(ExternalModuleSettingsStep<GradleProjectSettings>(
+                wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
+    }
+
+    override fun isSuitableSdkType(sdkType: SdkTypeId?) = sdkType is JavaSdkType
+
+    override fun getCustomOptionsStep(context: WizardContext?, parentDisposable: Disposable?): ModuleWizardStep? {
+        val step = GradleFrameworksWizardStep2(context, this)
+        Disposer.register(parentDisposable!!, step)
+        return step
+    }
+}
