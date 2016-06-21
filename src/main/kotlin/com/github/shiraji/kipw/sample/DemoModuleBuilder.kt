@@ -1,6 +1,7 @@
 package com.github.shiraji.kipw.sample
 
 import com.intellij.ide.fileTemplates.FileTemplateManager
+import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.ide.util.projectWizard.JavaModuleBuilder
 import com.intellij.ide.util.projectWizard.WizardContext
 import com.intellij.openapi.Disposable
@@ -24,11 +25,9 @@ import java.io.IOException
 
 class DemoModuleBuilder : JavaModuleBuilder() {
 
-
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle";
     val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle";
     val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle";
-    val DEFAULT_TEMPLATE_GRADLE_BUILD = "Gradle Build Script.gradle";
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME";
     val TEMPLATE_ATTRIBUTE_MODULE_PATH = "MODULE_PATH";
     val TEMPLATE_ATTRIBUTE_MODULE_FLAT_DIR = "MODULE_FLAT_DIR";
@@ -82,58 +81,58 @@ class DemoModuleBuilder : JavaModuleBuilder() {
 
     fun setupGradleSettingsFile(rootProjectPath: String, modelContentRootDir: VirtualFile, projectName: String, moduleName: String, renderNewFile: Boolean): VirtualFile? {
         var file: VirtualFile = getOrCreateExternalProjectConfigFile(rootProjectPath, GradleConstants.SETTINGS_FILE_NAME) ?: return null
-
-        if (renderNewFile) {
-            val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.getParent(), '/');
-
-            val attributes = hashMapOf<String, String?>()
-            attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName);
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName);
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName);
-            saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes);
-        } else {
-            val separatorChar = if (file.parent == null || !VfsUtilCore.isAncestor(file.getParent(), modelContentRootDir, true)) '/' else ':'
-            val modulePath = VfsUtil.getPath(file, modelContentRootDir, separatorChar)
-
-            val attributes = hashMapOf<String, String?>()
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName);
-            // check for flat structure
-            val flatStructureModulePath =
-                    if (modulePath != null && StringUtil.startsWith(modulePath, "../")) StringUtil.trimStart(modulePath, "../") else null
-            if (StringUtil.equals(flatStructureModulePath, modelContentRootDir.getName())) {
-                attributes.put(TEMPLATE_ATTRIBUTE_MODULE_FLAT_DIR, "true");
-                attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, flatStructureModulePath);
-            } else {
-                attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, modulePath);
-            }
-
-            appendToFile(file, TEMPLATE_GRADLE_SETTINGS_MERGE, attributes);
-        }
+        val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.parent, '/');
+        val attributes = hashMapOf<String, String?>()
+        attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName);
+        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName);
+        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName);
+        saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes);
         return file;
     }
 
     fun setupGradleBuildFile(modelContentRootDir: VirtualFile): VirtualFile? {
-        return getOrCreateExternalProjectConfigFile(modelContentRootDir.path, GradleConstants.DEFAULT_SCRIPT_NAME)
+        val file = getOrCreateExternalProjectConfigFile(modelContentRootDir.path, GradleConstants.DEFAULT_SCRIPT_NAME)
 
-//        if (file != null) {
-//            val templateName = getExternalProjectSettings().getDistributionType() == DistributionType.WRAPPED
-//            ? TEMPLATE_GRADLE_BUILD_WITH_WRAPPER
-//            : DEFAULT_TEMPLATE_GRADLE_BUILD;
-//            Map<String, String> attributes = ContainerUtil.newHashMap();
-//            if (myProjectId != null) {
-//                attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, myProjectId.getVersion());
-//                attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, myProjectId.getGroupId());
-//                attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, GradleVersion.current().getVersion());
-//            }
-//            saveFile(file, templateName, attributes);
-//        }
-//        return file
+        if (file != null) {
+            val attributes = hashMapOf<String, String?>()
+            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, "version");
+            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, "group");
+            attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, "2.5");
+
+            val template = """
+            #if (\$\{MODULE_GROUP\} && \$\{MODULE_GROUP\} != "")
+            group '\$\{MODULE_GROUP\}'
+            #end
+            #if (\$\{MODULE_VERSION\} && \$\{MODULE_VERSION\} != "")
+            version '\$\{MODULE_VERSION\}'
+            #end
+
+            task wrapper(type: Wrapper) {
+            #if (\$\{GRADLE_VERSION\} && \$\{GRADLE_VERSION\} != "")
+              gradleVersion = '\$\{GRADLE_VERSION\}'
+            #else
+              gradleVersion = '2.3'
+            #end
+              distributionUrl = "https://services.gradle.org/distributions/gradle-\$\gradleVersion-all.zip"
+            }
+            """
+            saveFileFromText(file, template, attributes)
+        }
+        return file
     }
 
     fun getOrCreateExternalProjectConfigFile(parent: String, fileName: String): VirtualFile? {
         val file = File(parent, fileName)
         FileUtilRt.createIfNotExists(file)
         return LocalFileSystem.getInstance().refreshAndFindFileByIoFile(file)
+    }
+
+    private fun saveFileFromText(file: VirtualFile, template: String, attributes: Map<String, String?>?) {
+        try {
+            appendToFile(file, if (attributes != null) FileTemplateUtil.mergeTemplate(attributes, template, false) else template)
+        } catch (e: IOException) {
+            throw ConfigurationException(e.message, e.stackTrace.toString())
+        }
     }
 
     private fun saveFile(file: VirtualFile, templateName: String, templateAttributes: Map<String, String?>?) {
