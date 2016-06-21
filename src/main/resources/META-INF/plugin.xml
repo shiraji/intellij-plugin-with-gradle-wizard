@@ -19,6 +19,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <projectTemplatesFactory implementation="com.github.shiraji.kipw.IntelliJGradlePluginTemplatesFactory"/>
     <moduleType id="DEMO_MODULE_TYPE" implementationClass="com.github.shiraji.kipw.sample.DemoModuleType"/>
+    <internalFileTemplate name="Gradle Build Script2"/>
   </extensions>
 
   <application-components>

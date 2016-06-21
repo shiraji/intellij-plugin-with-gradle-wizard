@@ -98,25 +98,7 @@ class DemoModuleBuilder : JavaModuleBuilder() {
             attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, "version");
             attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, "group");
             attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, "2.5");
-
-            val template = """
-            #if (\$\{MODULE_GROUP\} && \$\{MODULE_GROUP\} != "")
-            group '\$\{MODULE_GROUP\}'
-            #end
-            #if (\$\{MODULE_VERSION\} && \$\{MODULE_VERSION\} != "")
-            version '\$\{MODULE_VERSION\}'
-            #end
-
-            task wrapper(type: Wrapper) {
-            #if (\$\{GRADLE_VERSION\} && \$\{GRADLE_VERSION\} != "")
-              gradleVersion = '\$\{GRADLE_VERSION\}'
-            #else
-              gradleVersion = '2.3'
-            #end
-              distributionUrl = "https://services.gradle.org/distributions/gradle-\$\gradleVersion-all.zip"
-            }
-            """
-            saveFileFromText(file, template, attributes)
+            saveFile(file, "Gradle Build Script2", attributes)
         }
         return file
     }
