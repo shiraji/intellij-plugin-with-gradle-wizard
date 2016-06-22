@@ -9,6 +9,7 @@ import com.intellij.openapi.externalSystem.model.ProjectSystemId
 import com.intellij.openapi.externalSystem.service.project.wizard.AbstractExternalModuleBuilder
 import com.intellij.openapi.externalSystem.service.project.wizard.ExternalModuleSettingsStep
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil
+import com.intellij.openapi.module.StdModuleTypes
 import com.intellij.openapi.options.ConfigurationException
 import com.intellij.openapi.project.ex.ProjectManagerEx
 import com.intellij.openapi.projectRoots.JavaSdkType
@@ -49,7 +50,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
     var rootProjectPath: String? = null
 
-    override fun getModuleType() = DemoModuleType.getInstance()
+    override fun getModuleType() = StdModuleTypes.JAVA
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
