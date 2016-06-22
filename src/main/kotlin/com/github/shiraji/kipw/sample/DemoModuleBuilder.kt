@@ -50,6 +50,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
     var rootProjectPath: String? = null
 
+    // TODO filter only plugin sdk
     override fun getModuleType() = StdModuleTypes.JAVA
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
