@@ -2,6 +2,7 @@ package com.github.shiraji.kipw.sample
 
 import com.intellij.ide.fileTemplates.FileTemplateManager
 import com.intellij.ide.fileTemplates.FileTemplateUtil
+import com.intellij.ide.projectView.actions.MarkRootActionBase
 import com.intellij.ide.util.projectWizard.ModuleWizardStep
 import com.intellij.ide.util.projectWizard.WizardContext
 import com.intellij.openapi.Disposable
@@ -26,6 +27,7 @@ import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
+import org.jetbrains.jps.model.java.JavaResourceRootType
 import org.jetbrains.plugins.gradle.frameworkSupport.BuildScriptDataBuilder
 import org.jetbrains.plugins.gradle.service.settings.GradleProjectSettingsControl
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings
@@ -37,6 +39,8 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle";
     val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle";
+    val TEMPLATE_PLUGIN_XML = "Plugin.xml";
+
     val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle";
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME";
     val TEMPLATE_ATTRIBUTE_MODULE_PATH = "MODULE_PATH";
@@ -84,10 +88,23 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
                 rootProjectPath!!, modelContentRootDir, modifiableRootModel.project.name,
                 modifiableRootModel.module.name, true)
 
+        setupPluginFile(modifiableRootModel, modelContentRootDir)
+
         if (gradleBuildFile != null) {
             modifiableRootModel.module.putUserData(
                     BUILD_SCRIPT_DATA, BuildScriptDataBuilder(gradleBuildFile));
         }
+    }
+
+    fun setupPluginFile(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile): VirtualFile? {
+        val resourceRootPath = "${modelContentRootDir.path}/src/main/resouces/"
+        val contentRoot = LocalFileSystem.getInstance().findFileByPath(contentEntryPath!!)
+        val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
+        contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
+        var file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
+        val attributes = hashMapOf<String, String?>()
+        saveFile(file, TEMPLATE_PLUGIN_XML, attributes)
+        return file
     }
 
     fun setupGradleSettingsFile(rootProjectPath: String, modelContentRootDir: VirtualFile, projectName: String, moduleName: String, renderNewFile: Boolean): VirtualFile? {
