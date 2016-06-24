@@ -28,6 +28,7 @@ import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 import org.jetbrains.jps.model.java.JavaResourceRootType
+import org.jetbrains.jps.model.java.JavaSourceRootType
 import org.jetbrains.plugins.gradle.frameworkSupport.BuildScriptDataBuilder
 import org.jetbrains.plugins.gradle.service.settings.GradleProjectSettingsControl
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings
@@ -89,11 +90,21 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
                 modifiableRootModel.module.name, true)
 
         setupPluginFile(modifiableRootModel, modelContentRootDir)
+        setupSourceDirectory(modifiableRootModel, modelContentRootDir)
 
         if (gradleBuildFile != null) {
             modifiableRootModel.module.putUserData(
                     BUILD_SCRIPT_DATA, BuildScriptDataBuilder(gradleBuildFile));
         }
+    }
+
+    private fun setupSourceDirectory(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile) {
+        val resourceRootPath = "${modelContentRootDir.path}/src/main/java"
+        val contentRoot = LocalFileSystem.getInstance().findFileByPath(contentEntryPath!!)
+        val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
+        contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaSourceRootType.SOURCE)
+
+        VfsUtil.createDirectories(resourceRootPath)
     }
 
     fun setupPluginFile(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile): VirtualFile? {
