@@ -67,7 +67,6 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         val modelContentRootDir = fileSystem.refreshAndFindFileByIoFile(contentRootDir) ?: return
         modifiableRootModel ?: return
         modifiableRootModel.addContentEntry(modelContentRootDir);
-        // todo this should be moved to generic ModuleBuilder
         if (myJdk == null) {
             modifiableRootModel.inheritSdk();
         } else {
@@ -81,8 +80,6 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         rootProjectPath =
                 FileUtil.toCanonicalPath(project.basePath)// : modelContentRootDir.getPath());
 //        }
-
-        // FROM HERE
 
         val gradleBuildFile = setupGradleBuildFile(modelContentRootDir)
         setupGradleSettingsFile(
