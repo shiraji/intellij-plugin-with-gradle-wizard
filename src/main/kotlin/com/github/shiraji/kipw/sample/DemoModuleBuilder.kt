@@ -188,8 +188,11 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     override fun createWizardSteps(wizardContext: WizardContext, modulesProvider: ModulesProvider): Array<out ModuleWizardStep>? {
         this.wizardContext = wizardContext
 
-        return arrayOf(ExternalModuleSettingsStep<GradleProjectSettings>(
-                wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
+        return arrayOf(
+                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)),
+                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)),
+                DemoModuleWizardStep(),
+                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
     }
 
     override fun isSuitableSdkType(sdkType: SdkTypeId?) = sdkType is JavaSdkType
