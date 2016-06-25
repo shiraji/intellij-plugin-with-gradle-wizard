@@ -36,7 +36,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="1.0.0-SNAPSHOT"/>
+          <text value="1.0"/>
         </properties>
       </component>
       <component id="27970" class="javax.swing.JTextField" binding="pluginName">
@@ -45,7 +45,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="Plugin display name here"/>
+        </properties>
       </component>
       <component id="7466d" class="javax.swing.JTextField" binding="intellijVersion">
         <constraints>
@@ -54,7 +56,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="2016.1.3"/>
+          <text value="141.0"/>
         </properties>
       </component>
       <component id="ef613" class="javax.swing.JLabel">
@@ -97,7 +99,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="com.yourcompany.unique.plugin.id"/>
+        </properties>
       </component>
       <component id="d274a" class="javax.swing.JLabel">
         <constraints>
@@ -113,7 +117,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="support@yourcompany.com"/>
+        </properties>
       </component>
       <component id="81bad" class="javax.swing.JLabel">
         <constraints>
@@ -129,7 +135,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="http://www.yourcompany.com"/>
+        </properties>
       </component>
       <component id="e6ba6" class="javax.swing.JLabel">
         <constraints>
@@ -145,7 +153,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="YourCompany"/>
+        </properties>
       </component>
     </children>
   </grid>
