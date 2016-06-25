@@ -1,15 +1,13 @@
 <idea-plugin version="2">
     <id>com.yourcompany.unique.plugin.id</id>
-    <name>Sample plugin</name>
+    <name>${PLUGIN_NAME}</name>
     <version>0.0.1</version>
     <vendor email="dummy" url="dummy">dummy</vendor>
 
     <description><![CDATA[
-      Sample plugin.<br>
     ]]></description>
 
     <change-notes><![CDATA[
-      Release 0.0.1: Initial release.<br>
     ]]>
     </change-notes>
 

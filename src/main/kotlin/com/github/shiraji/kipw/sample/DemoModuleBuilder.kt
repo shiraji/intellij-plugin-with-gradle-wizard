@@ -58,6 +58,8 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     // TODO filter only plugin sdk
     override fun getModuleType() = StdModuleTypes.JAVA
 
+    var pluginName: String = ""
+
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
         if (contentEntryPath.isNullOrEmpty()) return
@@ -111,17 +113,18 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
         var file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
         val attributes = hashMapOf<String, String?>()
+        attributes.put("PLUGIN_NAME", pluginName)
         saveFile(file, TEMPLATE_PLUGIN_XML, attributes)
         return file
     }
 
     fun setupGradleSettingsFile(rootProjectPath: String, modelContentRootDir: VirtualFile, projectName: String, moduleName: String, renderNewFile: Boolean): VirtualFile? {
         var file: VirtualFile = getOrCreateExternalProjectConfigFile(rootProjectPath, GradleConstants.SETTINGS_FILE_NAME) ?: return null
-        val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.parent, '/');
+        val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.parent, '/')
         val attributes = hashMapOf<String, String?>()
-        attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName);
-        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName);
-        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName);
+        attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName)
+        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName)
+        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName)
         saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes);
         return file;
     }
@@ -131,9 +134,10 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
         if (file != null) {
             val attributes = hashMapOf<String, String?>()
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, "version");
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, "group");
-            attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, "2.5");
+            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, "version")
+            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, "group")
+            attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, "2.5")
+            attributes.put("PLUGIN_NAME", pluginName);
             saveFile(file, "Gradle Build Script2", attributes)
         }
         return file
@@ -189,9 +193,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         this.wizardContext = wizardContext
 
         return arrayOf(
-                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)),
-                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)),
-                DemoModuleWizardStep(),
+                DemoModuleWizardSetup2(wizardContext, this),
                 ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
     }
 

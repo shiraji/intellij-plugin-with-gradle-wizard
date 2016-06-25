@@ -9,7 +9,7 @@ sourceCompatibility = 1.8
 
 intellij {
     version '2016.1.2'
-    pluginName 'sample'
+    pluginName '${PLUGIN_NAME}'
 }
 
 #if (${MODULE_GROUP} && ${MODULE_GROUP} != "")
