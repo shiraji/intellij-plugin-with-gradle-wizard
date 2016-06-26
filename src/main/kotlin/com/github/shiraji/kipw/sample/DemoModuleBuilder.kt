@@ -58,7 +58,14 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     // TODO filter only plugin sdk
     override fun getModuleType() = StdModuleTypes.JAVA
 
+    var pluginVersion: String = ""
     var pluginName: String = ""
+    var pluginId: String = ""
+    var vendorEmail: String = ""
+    var vendorUrl: String = ""
+    var vendorName: String = ""
+    var gradlePluginVersion: String = ""
+    var intellijVersion: String = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -114,6 +121,11 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         var file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
         val attributes = hashMapOf<String, String?>()
         attributes.put("PLUGIN_NAME", pluginName)
+        attributes.put("PLUGIN_VERSION", pluginVersion)
+        attributes.put("PLUGIN_ID", pluginId)
+        attributes.put("VENDOR_EMAIL", vendorEmail)
+        attributes.put("VENDOR_URL", vendorUrl)
+        attributes.put("VENDOR_NAME", vendorName)
         saveFile(file, TEMPLATE_PLUGIN_XML, attributes)
         return file
     }
@@ -134,10 +146,11 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
         if (file != null) {
             val attributes = hashMapOf<String, String?>()
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_VERSION, "version")
-            attributes.put(TEMPLATE_ATTRIBUTE_MODULE_GROUP, "group")
-            attributes.put(TEMPLATE_ATTRIBUTE_GRADLE_VERSION, "2.5")
-            attributes.put("PLUGIN_NAME", pluginName);
+            attributes.put("PLUGIN_NAME", pluginName)
+            attributes.put("PLUGIN_VERSION", pluginVersion)
+            attributes.put("PLUGIN_ID", pluginId)
+            attributes.put("INTELLIJ_VERSION", intellijVersion)
+            attributes.put("GRADLE_PLUGIN_VERSION", gradlePluginVersion)
             saveFile(file, "Gradle Build Script2", attributes)
         }
         return file

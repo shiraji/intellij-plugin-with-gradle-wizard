@@ -33,7 +33,14 @@ public class DemoModuleWizardSetup2 extends ModuleWizardStep implements Disposab
 
     @Override
     public void updateDataModel() {
+        builder.setGradlePluginVersion(version.getText());
+        builder.setIntellijVersion(intellijVersion.getText());
         builder.setPluginName(pluginName.getText());
+        builder.setPluginId(pluginId.getText());
+        builder.setPluginVersion(pluginVersion.getText());
+        builder.setVendorEmail(vendorEmail.getText());
+        builder.setVendorName(vendorName.getText());
+        builder.setVendorUrl(vendorUrl.getText());
     }
 
     @Override
