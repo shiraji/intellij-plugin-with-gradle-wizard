@@ -41,6 +41,8 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle"
     val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle"
     val TEMPLATE_PLUGIN_XML = "Plugin.xml"
+    val TEMPLATE_RUNIDEA_XML = "runIdea.xml"
+    val TEMPLATE_BUILDPLUNGIN_XML = "buildPlugin.xml"
 
     val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle"
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME"
@@ -97,11 +99,20 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
         setupPluginFile(modifiableRootModel, modelContentRootDir)
         setupSourceDirectory(modifiableRootModel, modelContentRootDir)
+        setupRunConfigurations(modelContentRootDir)
 
         if (gradleBuildFile != null) {
             modifiableRootModel.module.putUserData(
                     BUILD_SCRIPT_DATA, BuildScriptDataBuilder(gradleBuildFile));
         }
+    }
+
+    private fun setupRunConfigurations(modelContentRootDir: VirtualFile) {
+        val ideaPath = "${modelContentRootDir.path}/.idea/runConfigurations"
+        val buildPluginFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "buildPlugin.xml") ?: return
+        saveFile(buildPluginFile, TEMPLATE_BUILDPLUNGIN_XML, hashMapOf<String, String?>())
+        val runIdeaFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "runIdea.xml") ?: return
+        saveFile(runIdeaFile, TEMPLATE_RUNIDEA_XML, hashMapOf<String, String?>())
     }
 
     private fun setupSourceDirectory(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile) {
