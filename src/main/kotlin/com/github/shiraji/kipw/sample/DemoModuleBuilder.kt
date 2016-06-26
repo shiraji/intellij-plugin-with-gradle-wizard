@@ -118,7 +118,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         val contentRoot = LocalFileSystem.getInstance().findFileByPath(contentEntryPath!!)
         val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
-        var file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
+        val file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
         val attributes = hashMapOf<String, String?>()
         attributes.put("PLUGIN_NAME", pluginName)
         attributes.put("PLUGIN_VERSION", pluginVersion)
