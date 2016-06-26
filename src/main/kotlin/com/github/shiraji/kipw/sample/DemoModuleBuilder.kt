@@ -126,6 +126,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         attributes.put("VENDOR_EMAIL", vendorEmail)
         attributes.put("VENDOR_URL", vendorUrl)
         attributes.put("VENDOR_NAME", vendorName)
+        attributes.put("INTELLIJ_VERSION", intellijVersion)
         saveFile(file, TEMPLATE_PLUGIN_XML, attributes)
         return file
     }
