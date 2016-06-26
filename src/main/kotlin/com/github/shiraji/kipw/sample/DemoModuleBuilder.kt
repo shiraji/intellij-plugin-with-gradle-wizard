@@ -38,18 +38,18 @@ import java.io.IOException
 
 class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Demo Module Type"), GradleProjectSettings()) {
 
-    val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle";
-    val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle";
-    val TEMPLATE_PLUGIN_XML = "Plugin.xml";
+    val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle"
+    val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle"
+    val TEMPLATE_PLUGIN_XML = "Plugin.xml"
 
-    val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle";
-    val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME";
-    val TEMPLATE_ATTRIBUTE_MODULE_PATH = "MODULE_PATH";
-    val TEMPLATE_ATTRIBUTE_MODULE_FLAT_DIR = "MODULE_FLAT_DIR";
-    val TEMPLATE_ATTRIBUTE_MODULE_NAME = "MODULE_NAME";
-    val TEMPLATE_ATTRIBUTE_MODULE_GROUP = "MODULE_GROUP";
-    val TEMPLATE_ATTRIBUTE_MODULE_VERSION = "MODULE_VERSION";
-    val TEMPLATE_ATTRIBUTE_GRADLE_VERSION = "GRADLE_VERSION";
+    val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle"
+    val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME"
+    val TEMPLATE_ATTRIBUTE_MODULE_PATH = "MODULE_PATH"
+    val TEMPLATE_ATTRIBUTE_MODULE_FLAT_DIR = "MODULE_FLAT_DIR"
+    val TEMPLATE_ATTRIBUTE_MODULE_NAME = "MODULE_NAME"
+    val TEMPLATE_ATTRIBUTE_MODULE_GROUP = "MODULE_GROUP"
+    val TEMPLATE_ATTRIBUTE_MODULE_VERSION = "MODULE_VERSION"
+    val TEMPLATE_ATTRIBUTE_GRADLE_VERSION = "GRADLE_VERSION"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -138,7 +138,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName)
         attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName)
         attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName)
-        saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes);
+        saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes)
         return file;
     }
 
