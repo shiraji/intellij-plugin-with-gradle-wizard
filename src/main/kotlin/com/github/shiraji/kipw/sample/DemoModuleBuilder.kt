@@ -68,6 +68,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     var vendorName: String = ""
     var gradlePluginVersion: String = ""
     var intellijVersion: String = ""
+    var isKotlin: Boolean = false
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -126,7 +127,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     }
 
     fun setupPluginFile(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile): VirtualFile? {
-        val resourceRootPath = "${modelContentRootDir.path}/src/main/resouces/"
+        val resourceRootPath = "${modelContentRootDir.path}/src/main/resources/"
         val contentRoot = LocalFileSystem.getInstance().findFileByPath(contentEntryPath!!)
         val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
@@ -164,6 +165,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
             attributes.put("PLUGIN_ID", pluginId)
             attributes.put("INTELLIJ_VERSION", intellijVersion)
             attributes.put("GRADLE_PLUGIN_VERSION", gradlePluginVersion)
+            if (isKotlin) attributes.put("IS_KOTLIN", "YES")
             saveFile(file, "Gradle Build Script2", attributes)
         }
         return file
@@ -226,7 +228,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     override fun isSuitableSdkType(sdkType: SdkTypeId?) = sdkType is JavaSdkType
 
     override fun getCustomOptionsStep(context: WizardContext?, parentDisposable: Disposable?): ModuleWizardStep? {
-        val step = GradleFrameworksWizardStep2(context, this)
+        val step = DemoModuleSupportLanguage(context, this)
         Disposer.register(parentDisposable!!, step)
         return step
     }

@@ -1,9 +1,25 @@
+#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+buildscript {
+    ext.kotlin_version = '1.0.2-1'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+#end
 plugins {
     id "org.jetbrains.intellij" version "${GRADLE_PLUGIN_VERSION}"
 }
 
 apply plugin: 'org.jetbrains.intellij'
+#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+apply plugin: 'kotlin'
+#else
 apply plugin: 'java'
+#end
 
 sourceCompatibility = JavaVersion.VERSION_1_6
 targetCompatibility = JavaVersion.VERSION_1_6
@@ -22,4 +38,7 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.12'
+#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+#end
 }
