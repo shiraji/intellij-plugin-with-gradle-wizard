@@ -109,10 +109,11 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
 
     private fun setupRunConfigurations(modelContentRootDir: VirtualFile) {
         val ideaPath = "${modelContentRootDir.path}/.idea/runConfigurations"
+        val attributes = hashMapOf<String, String?>("PLUGIN_NAME" to pluginName)
         val buildPluginFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "buildPlugin.xml") ?: return
-        saveFile(buildPluginFile, TEMPLATE_BUILDPLUNGIN_XML, hashMapOf<String, String?>())
+        saveFile(buildPluginFile, TEMPLATE_BUILDPLUNGIN_XML, attributes)
         val runIdeaFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "runIdea.xml") ?: return
-        saveFile(runIdeaFile, TEMPLATE_RUNIDEA_XML, hashMapOf<String, String?>())
+        saveFile(runIdeaFile, TEMPLATE_RUNIDEA_XML, attributes)
     }
 
     private fun setupSourceDirectory(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile) {
