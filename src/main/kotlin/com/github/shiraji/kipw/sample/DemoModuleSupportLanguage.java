@@ -20,7 +20,7 @@ public class DemoModuleSupportLanguage extends ModuleWizardStep implements Dispo
         this.builder = builder;
 
         languageComboBox.addItem("Java");
-        languageComboBox.addItem("Java and/or Kotlin");
+        languageComboBox.addItem("Kotlin");
     }
 
     @Override
