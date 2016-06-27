@@ -9,7 +9,7 @@ import com.intellij.openapi.roots.ui.configuration.ModulesProvider
 class IPGModuleType() : ModuleType<IPGWizardBuilder>(ID) {
 
     companion object {
-        val ID: String = "DEMO_MODULE_TYPE"
+        val ID: String = "INTELLIJ_PLUGIN_WITH_GRADLE_WIZARD"
     }
 
     override fun createModuleBuilder() = IPGWizardBuilder()
@@ -18,9 +18,9 @@ class IPGModuleType() : ModuleType<IPGWizardBuilder>(ID) {
 
     override fun getNodeIcon(isOpened: Boolean) = AllIcons.General.Information
 
-    override fun getName() = "Demo Module Type"
+    override fun getName() = "Intellij Plugin with Gradle Wizard"
 
-    override fun getDescription() = "Demo Module Type"
+    override fun getDescription() = "Intellij Plugin with Gradle"
 
     override fun createWizardSteps(wizardContext: WizardContext, moduleBuilder: IPGWizardBuilder, modulesProvider: ModulesProvider): Array<out ModuleWizardStep> {
         return super.createWizardSteps(wizardContext, moduleBuilder, modulesProvider)
