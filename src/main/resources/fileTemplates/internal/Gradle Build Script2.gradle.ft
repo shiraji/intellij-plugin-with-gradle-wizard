@@ -1,4 +1,4 @@
-#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+#if (${LANGUAGE} && ${LANGUAGE} == "Kotlin")
 buildscript {
     ext.kotlin_version = '1.0.2-1'
     repositories {
@@ -15,7 +15,7 @@ plugins {
 }
 
 apply plugin: 'org.jetbrains.intellij'
-#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+#if (${LANGUAGE} && ${LANGUAGE} == "Kotlin")
 apply plugin: 'kotlin'
 #else
 apply plugin: 'java'
@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.12'
-#if (${IS_KOTLIN} && ${IS_KOTLIN} != "")
+#if (${LANGUAGE} && ${LANGUAGE} == "Kotlin")
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 #end
 }

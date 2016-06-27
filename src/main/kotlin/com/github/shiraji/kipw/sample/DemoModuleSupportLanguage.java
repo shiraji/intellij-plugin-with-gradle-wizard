@@ -7,6 +7,8 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.components.JBList;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DemoModuleSupportLanguage extends ModuleWizardStep implements Disposable {
     private JPanel panel;
@@ -15,12 +17,21 @@ public class DemoModuleSupportLanguage extends ModuleWizardStep implements Dispo
     private WizardContext context;
     private DemoModuleBuilder builder;
 
+    private List<String> languages = new ArrayList<String>() {{
+        add("Java");
+        add("Kotlin");
+    }};
+
+    static {
+    }
+
     public DemoModuleSupportLanguage(WizardContext context, DemoModuleBuilder builder) {
         this.context = context;
         this.builder = builder;
 
-        languageComboBox.addItem("Java");
-        languageComboBox.addItem("Kotlin");
+        for (String language : languages) {
+            languageComboBox.addItem(language);
+        }
     }
 
     @Override
@@ -30,7 +41,7 @@ public class DemoModuleSupportLanguage extends ModuleWizardStep implements Dispo
 
     @Override
     public void updateDataModel() {
-        if (languageComboBox.getSelectedIndex() == 1) builder.setKotlin(true);
+        builder.setLanguage(languages.get(languageComboBox.getSelectedIndex()));
     }
 
     @Override

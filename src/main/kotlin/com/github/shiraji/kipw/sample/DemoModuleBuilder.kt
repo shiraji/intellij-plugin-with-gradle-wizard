@@ -68,7 +68,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
     var vendorName: String = ""
     var gradlePluginVersion: String = ""
     var intellijVersion: String = ""
-    var isKotlin: Boolean = false
+    var language: String = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -86,6 +86,8 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         }
 
         val project = modifiableRootModel.project;
+
+        // TODO fix this for adding new module
 //        if (myParentProject != null) {
 //            rootProjectPath = myParentProject.getLinkedExternalProjectPath();
 //        } else {
@@ -165,7 +167,7 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
             attributes.put("PLUGIN_ID", pluginId)
             attributes.put("INTELLIJ_VERSION", intellijVersion)
             attributes.put("GRADLE_PLUGIN_VERSION", gradlePluginVersion)
-            if (isKotlin) attributes.put("IS_KOTLIN", "YES")
+            attributes.put("LANGUAGE", language)
             saveFile(file, "Gradle Build Script2", attributes)
         }
         return file
