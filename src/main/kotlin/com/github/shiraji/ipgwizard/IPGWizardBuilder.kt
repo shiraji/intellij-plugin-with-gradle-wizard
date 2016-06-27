@@ -41,19 +41,16 @@ import java.io.IOException
 class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Intellij Plugin with Gradle"), GradleProjectSettings()) {
 
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle"
-    val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle"
     val TEMPLATE_PLUGIN_XML = "Plugin.xml"
     val TEMPLATE_RUNIDEA_XML = "runIdea.xml"
     val TEMPLATE_BUILDPLUNGIN_XML = "buildPlugin.xml"
 
-    val TEMPLATE_GRADLE_BUILD_WITH_WRAPPER = "Gradle Build Script with wrapper.gradle"
+    // DO NOT CHANGE
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME"
     val TEMPLATE_ATTRIBUTE_MODULE_PATH = "MODULE_PATH"
-    val TEMPLATE_ATTRIBUTE_MODULE_FLAT_DIR = "MODULE_FLAT_DIR"
     val TEMPLATE_ATTRIBUTE_MODULE_NAME = "MODULE_NAME"
-    val TEMPLATE_ATTRIBUTE_MODULE_GROUP = "MODULE_GROUP"
-    val TEMPLATE_ATTRIBUTE_MODULE_VERSION = "MODULE_VERSION"
-    val TEMPLATE_ATTRIBUTE_GRADLE_VERSION = "GRADLE_VERSION"
+
+    val TEMPLATE_ATTRIBUTE_PLUGIN_NAME = "PLUGIN_NAME"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -137,7 +134,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
         val file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
         val attributes = hashMapOf<String, String?>()
-        attributes.put("PLUGIN_NAME", pluginName)
+        attributes.put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
         attributes.put("PLUGIN_VERSION", pluginVersion)
         attributes.put("PLUGIN_ID", pluginId)
         attributes.put("VENDOR_EMAIL", vendorEmail)
@@ -164,7 +161,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
 
         if (file != null) {
             val attributes = hashMapOf<String, String?>()
-            attributes.put("PLUGIN_NAME", pluginName)
+            attributes.put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
             attributes.put("PLUGIN_VERSION", pluginVersion)
             attributes.put("PLUGIN_ID", pluginId)
             attributes.put("INTELLIJ_VERSION", intellijVersion)
