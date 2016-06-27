@@ -1,10 +1,10 @@
 @file:JvmName("DemoModuleConfig")
 
-package com.github.shiraji.ipgwizard
+package com.github.shiraji.ipgwizard.config
 
 import com.intellij.ide.util.PropertiesComponent
 
-object DemoModuleConfig {
+object IPGWizardConfig {
     val PLUGIN_ID_KEY = "com.github.shiraji.foo.pluginid"
     val PLUGIN_NAME_KEY = "com.github.shiraji.foo.pluginname"
     val PLUGIN_VERSION_KEY = "com.github.shiraji.foo.pluginversion"

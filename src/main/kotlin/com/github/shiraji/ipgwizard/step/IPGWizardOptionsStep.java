@@ -1,5 +1,7 @@
-package com.github.shiraji.ipgwizard;
+package com.github.shiraji.ipgwizard.step;
 
+import com.github.shiraji.ipgwizard.IPGWizardBuilder;
+import com.github.shiraji.ipgwizard.config.IPGWizardConfig;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
@@ -8,7 +10,7 @@ import com.intellij.openapi.util.Disposer;
 
 import javax.swing.*;
 
-public class DemoModuleWizardSetup2 extends ModuleWizardStep implements Disposable {
+public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable {
     private JTextField version;
     private JTextField intellijVersion;
     private JTextField pluginVersion;
@@ -20,34 +22,34 @@ public class DemoModuleWizardSetup2 extends ModuleWizardStep implements Disposab
     private JTextField vendorName;
 
     private WizardContext wizardContext;
-    private DemoModuleBuilder builder;
+    private IPGWizardBuilder builder;
 
-    public DemoModuleWizardSetup2(WizardContext wizardContext, DemoModuleBuilder builder) {
+    public IPGWizardOptionsStep(WizardContext wizardContext, IPGWizardBuilder builder) {
         this.wizardContext = wizardContext;
         this.builder = builder;
 
-        String text = DemoModuleConfig.getGradlePluginVersion();
+        String text = IPGWizardConfig.getGradlePluginVersion();
         if (text != null) version.setText(text);
 
-        text = DemoModuleConfig.getIntellijVersion();
+        text = IPGWizardConfig.getIntellijVersion();
         if (text != null) intellijVersion.setText(text);
 
-        text = DemoModuleConfig.getPluginId();
+        text = IPGWizardConfig.getPluginId();
         if (text != null) pluginId.setText(text);
 
-        text = DemoModuleConfig.getPluginName();
+        text = IPGWizardConfig.getPluginName();
         if (text != null) pluginName.setText(text);
 
-        text = DemoModuleConfig.getPluginVersion();
+        text = IPGWizardConfig.getPluginVersion();
         if (text != null) pluginVersion.setText(text);
 
-        text = DemoModuleConfig.getVendorEmail();
+        text = IPGWizardConfig.getVendorEmail();
         if (text != null) vendorEmail.setText(text);
 
-        text = DemoModuleConfig.getVendorName();
+        text = IPGWizardConfig.getVendorName();
         if (text != null) vendorName.setText(text);
 
-        text = DemoModuleConfig.getVendorUrl();
+        text = IPGWizardConfig.getVendorUrl();
         if (text != null) vendorUrl.setText(text);
     }
 
@@ -62,35 +64,35 @@ public class DemoModuleWizardSetup2 extends ModuleWizardStep implements Disposab
 
         String text = version.getText();
         builder.setGradlePluginVersion(text);
-        DemoModuleConfig.setGradlePluginVersion(text);
+        IPGWizardConfig.setGradlePluginVersion(text);
 
         text = intellijVersion.getText();
         builder.setIntellijVersion(text);
-        DemoModuleConfig.setIntellijVersion(text);
+        IPGWizardConfig.setIntellijVersion(text);
 
         text = pluginName.getText();
         builder.setPluginName(text);
-        DemoModuleConfig.setPluginName(text);
+        IPGWizardConfig.setPluginName(text);
 
         text = pluginId.getText();
         builder.setPluginId(text);
-        DemoModuleConfig.setPluginId(text);
+        IPGWizardConfig.setPluginId(text);
 
         text = pluginVersion.getText();
         builder.setPluginVersion(text);
-        DemoModuleConfig.setPluginVersion(text);
+        IPGWizardConfig.setPluginVersion(text);
 
         text = vendorEmail.getText();
         builder.setVendorEmail(text);
-        DemoModuleConfig.setVendorEmail(text);
+        IPGWizardConfig.setVendorEmail(text);
 
         text = vendorName.getText();
         builder.setVendorName(text);
-        DemoModuleConfig.setVendorName(text);
+        IPGWizardConfig.setVendorName(text);
 
         text = vendorUrl.getText();
         builder.setVendorUrl(text);
-        DemoModuleConfig.setVendorUrl(text);
+        IPGWizardConfig.setVendorUrl(text);
     }
 
     @Override

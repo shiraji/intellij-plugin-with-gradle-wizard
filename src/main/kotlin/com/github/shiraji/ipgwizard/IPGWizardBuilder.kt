@@ -1,5 +1,7 @@
 package com.github.shiraji.ipgwizard
 
+import com.github.shiraji.ipgwizard.step.IPGWizardOptionsStep
+import com.github.shiraji.ipgwizard.step.IPGWizardSupportLanguageStep
 import com.intellij.ide.fileTemplates.FileTemplateManager
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.ide.projectView.actions.MarkRootActionBase
@@ -36,7 +38,7 @@ import org.jetbrains.plugins.gradle.util.GradleConstants
 import java.io.File
 import java.io.IOException
 
-class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Demo Module Type"), GradleProjectSettings()) {
+class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Demo Module Type"), GradleProjectSettings()) {
 
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle"
     val TEMPLATE_GRADLE_SETTINGS_MERGE = "Gradle Settings merge.gradle"
@@ -223,14 +225,14 @@ class DemoModuleBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(P
         this.wizardContext = wizardContext
 
         return arrayOf(
-                DemoModuleWizardSetup2(wizardContext, this),
+                IPGWizardOptionsStep(wizardContext, this),
                 ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
     }
 
     override fun isSuitableSdkType(sdkType: SdkTypeId?) = sdkType is JavaSdkType
 
     override fun getCustomOptionsStep(context: WizardContext?, parentDisposable: Disposable?): ModuleWizardStep? {
-        val step = DemoModuleSupportLanguage(context, this)
+        val step = IPGWizardSupportLanguageStep(context, this)
         Disposer.register(parentDisposable!!, step)
         return step
     }

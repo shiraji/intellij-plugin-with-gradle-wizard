@@ -1,5 +1,6 @@
-package com.github.shiraji.ipgwizard;
+package com.github.shiraji.ipgwizard.step;
 
+import com.github.shiraji.ipgwizard.IPGWizardBuilder;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
@@ -10,12 +11,12 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DemoModuleSupportLanguage extends ModuleWizardStep implements Disposable {
+public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Disposable {
     private JPanel panel;
     private JBList list;
     private JComboBox languageComboBox;
     private WizardContext context;
-    private DemoModuleBuilder builder;
+    private IPGWizardBuilder builder;
 
     private List<String> languages = new ArrayList<String>() {{
         add("Java");
@@ -25,7 +26,7 @@ public class DemoModuleSupportLanguage extends ModuleWizardStep implements Dispo
     static {
     }
 
-    public DemoModuleSupportLanguage(WizardContext context, DemoModuleBuilder builder) {
+    public IPGWizardSupportLanguageStep(WizardContext context, IPGWizardBuilder builder) {
         this.context = context;
         this.builder = builder;
 
