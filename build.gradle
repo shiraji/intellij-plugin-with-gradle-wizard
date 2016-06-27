@@ -18,7 +18,7 @@ apply plugin: 'kotlin'
 intellij {
     version '2016.1.3'
     plugins = ['Kotlin', 'devkit', 'gradle']
-    pluginName 'fooo'
+    pluginName 'Intellij Plugin with Gradle Wizard'
 
     updateSinceUntilBuild = false
     sameSinceUntilBuild = false
@@ -27,10 +27,9 @@ intellij {
         password System.getenv('PASSWORD')
 //        pluginId '8430'
     }
-
 }
 
-group 'com.github.shiraji.kipw'
+group 'com.github.shiraji.ipgwizard'
 version '1.0.0'
 
 repositories {
