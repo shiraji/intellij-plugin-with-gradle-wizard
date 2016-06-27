@@ -1,32 +1,32 @@
 <idea-plugin version="2">
-  <id>com.github.shiraji.kipw</id>
-  <name>fooo</name>
-  <vendor email="isogai.shiraji@gmail.com" url="https://github.com/shiraji">Shiraji</vendor>
+    <id>com.github.shiraji.kipw</id>
+    <name>fooo</name>
+    <vendor email="isogai.shiraji@gmail.com" url="https://github.com/shiraji">Shiraji</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <idea-version since-build="143"/>
+    <idea-version since-build="143"/>
 
-  <depends>org.jetbrains.kotlin</depends>
-  <depends>DevKit</depends>
-  <depends>org.jetbrains.plugins.gradle</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>DevKit</depends>
+    <depends>org.jetbrains.plugins.gradle</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <moduleType id="DEMO_MODULE_TYPE" implementationClass="com.github.shiraji.kipw.sample.DemoModuleType"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <moduleType id="DEMO_MODULE_TYPE" implementationClass="com.github.shiraji.ipgwizard.DemoModuleType"/>
+    </extensions>
 
-  <application-components>
-  </application-components>
+    <application-components>
+    </application-components>
 
-  <project-components>
-  </project-components>
+    <project-components>
+    </project-components>
 
-  <actions>
-  </actions>
+    <actions>
+    </actions>
 
 </idea-plugin>

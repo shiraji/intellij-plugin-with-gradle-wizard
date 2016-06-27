@@ -1,6 +1,6 @@
 @file:JvmName("DemoModuleConfig")
 
-package com.github.shiraji.kipw.sample
+package com.github.shiraji.ipgwizard
 
 import com.intellij.ide.util.PropertiesComponent
 

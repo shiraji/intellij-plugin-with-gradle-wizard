@@ -1,4 +1,4 @@
-package com.github.shiraji.kipw.sample
+package com.github.shiraji.ipgwizard
 
 import com.intellij.ide.fileTemplates.FileTemplateManager
 import com.intellij.ide.fileTemplates.FileTemplateUtil
