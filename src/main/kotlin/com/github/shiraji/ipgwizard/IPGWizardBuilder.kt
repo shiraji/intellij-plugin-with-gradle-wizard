@@ -3,7 +3,6 @@ package com.github.shiraji.ipgwizard
 import com.github.shiraji.ipgwizard.step.IPGWizardOptionsStep
 import com.github.shiraji.ipgwizard.step.IPGWizardSupportLanguageStep
 import com.intellij.ide.fileTemplates.FileTemplateManager
-import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.ide.projectView.actions.MarkRootActionBase
 import com.intellij.ide.util.projectWizard.ModuleWizardStep
 import com.intellij.ide.util.projectWizard.WizardContext
@@ -51,6 +50,14 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_MODULE_NAME = "MODULE_NAME"
 
     val TEMPLATE_ATTRIBUTE_PLUGIN_NAME = "PLUGIN_NAME"
+    val TEMPLATE_ATTRIBUTE_PLUGIN_VERSION = "PLUGIN_VERSION"
+    val TEMPLATE_ATTRIBUTE_PLUGIN_ID = "PLUGIN_ID"
+    val TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION = "INTELLIJ_VERSION"
+    val TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION = "GRADLE_PLUGIN_VERSION"
+    val TEMPLATE_ATTRIBUTE_VENDOR_EMAIL = "VENDOR_EMAIL"
+    val TEMPLATE_ATTRIBUTE_VENDOR_NAME = "VENDOR_NAME"
+    val TEMPLATE_ATTRIBUTE_VENDOR_URL = "VENDOR_URL"
+    val TEMPLATE_ATTRIBUTE_LANGUAGE = "LANGUAGE"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -111,7 +118,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
 
     private fun setupRunConfigurations(modelContentRootDir: VirtualFile) {
         val ideaPath = "${modelContentRootDir.path}/.idea/runConfigurations"
-        val attributes = hashMapOf<String, String?>("PLUGIN_NAME" to pluginName)
+        val attributes = hashMapOf<String, String?>(TEMPLATE_ATTRIBUTE_PLUGIN_NAME to pluginName)
         val buildPluginFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "buildPlugin.xml") ?: return
         saveFile(buildPluginFile, TEMPLATE_BUILDPLUNGIN_XML, attributes)
         val runIdeaFile: VirtualFile = getOrCreateExternalProjectConfigFile(ideaPath, "runIdea.xml") ?: return
@@ -133,14 +140,15 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
         val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaResourceRootType.RESOURCE)
         val file: VirtualFile = getOrCreateExternalProjectConfigFile("$resourceRootPath/META-INF", "plugin.xml") ?: return null
-        val attributes = hashMapOf<String, String?>()
-        attributes.put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
-        attributes.put("PLUGIN_VERSION", pluginVersion)
-        attributes.put("PLUGIN_ID", pluginId)
-        attributes.put("VENDOR_EMAIL", vendorEmail)
-        attributes.put("VENDOR_URL", vendorUrl)
-        attributes.put("VENDOR_NAME", vendorName)
-        attributes.put("INTELLIJ_VERSION", intellijVersion)
+        val attributes = hashMapOf<String, String?>().apply {
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_VERSION, pluginVersion)
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_ID, pluginId)
+            put(TEMPLATE_ATTRIBUTE_VENDOR_EMAIL, vendorEmail)
+            put(TEMPLATE_ATTRIBUTE_VENDOR_URL, vendorUrl)
+            put(TEMPLATE_ATTRIBUTE_VENDOR_NAME, vendorName)
+            put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION, intellijVersion)
+        }
         saveFile(file, TEMPLATE_PLUGIN_XML, attributes)
         return file
     }
@@ -148,27 +156,26 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     fun setupGradleSettingsFile(rootProjectPath: String, modelContentRootDir: VirtualFile, projectName: String, moduleName: String, renderNewFile: Boolean): VirtualFile? {
         val file: VirtualFile = getOrCreateExternalProjectConfigFile(rootProjectPath, GradleConstants.SETTINGS_FILE_NAME) ?: return null
         val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.parent, '/')
-        val attributes = hashMapOf<String, String?>()
-        attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName)
-        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName)
-        attributes.put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName)
+        val attributes = hashMapOf<String, String?>().apply {
+            put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName)
+            put(TEMPLATE_ATTRIBUTE_MODULE_PATH, moduleDirName)
+            put(TEMPLATE_ATTRIBUTE_MODULE_NAME, moduleName)
+        }
         saveFile(file, TEMPLATE_GRADLE_SETTINGS, attributes)
         return file;
     }
 
     fun setupGradleBuildFile(modelContentRootDir: VirtualFile): VirtualFile? {
-        val file = getOrCreateExternalProjectConfigFile(modelContentRootDir.path, GradleConstants.DEFAULT_SCRIPT_NAME)
-
-        if (file != null) {
-            val attributes = hashMapOf<String, String?>()
-            attributes.put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
-            attributes.put("PLUGIN_VERSION", pluginVersion)
-            attributes.put("PLUGIN_ID", pluginId)
-            attributes.put("INTELLIJ_VERSION", intellijVersion)
-            attributes.put("GRADLE_PLUGIN_VERSION", gradlePluginVersion)
-            attributes.put("LANGUAGE", language)
-            saveFile(file, "Gradle Build Script2", attributes)
+        val file = getOrCreateExternalProjectConfigFile(modelContentRootDir.path, GradleConstants.DEFAULT_SCRIPT_NAME) ?: return null
+        val attributes = hashMapOf<String, String?>().apply {
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_NAME, pluginName)
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_VERSION, pluginVersion)
+            put(TEMPLATE_ATTRIBUTE_PLUGIN_ID, pluginId)
+            put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION, intellijVersion)
+            put(TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION, gradlePluginVersion)
+            put(TEMPLATE_ATTRIBUTE_LANGUAGE, language)
         }
+        saveFile(file, "Gradle Build Script2", attributes)
         return file
     }
 
@@ -178,51 +185,25 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
         return LocalFileSystem.getInstance().refreshAndFindFileByIoFile(file)
     }
 
-    private fun saveFileFromText(file: VirtualFile, template: String, attributes: Map<String, String?>?) {
-        try {
-            appendToFile(file, if (attributes != null) FileTemplateUtil.mergeTemplate(attributes, template, false) else template)
-        } catch (e: IOException) {
-            throw ConfigurationException(e.message, e.stackTrace.toString())
-        }
-    }
-
     private fun saveFile(file: VirtualFile, templateName: String, templateAttributes: Map<String, String?>?) {
-        val manager = FileTemplateManager.getDefaultInstance();
-        val template = manager.getInternalTemplate(templateName);
+        val manager = FileTemplateManager.getDefaultInstance()
+        val template = manager.getInternalTemplate(templateName)
         try {
-            appendToFile(file, if (templateAttributes != null) template.getText(templateAttributes) else template.text);
-        } catch (e: IOException) {
-            throw ConfigurationException(e.message, e.stackTrace.toString())
-        }
-    }
-
-    private fun appendToFile(file: VirtualFile, templateName: String, templateAttributes: Map<String, String?>?) {
-        val manager = FileTemplateManager.getDefaultInstance();
-        val template = manager.getInternalTemplate(templateName);
-        try {
-            appendToFile(file, if (templateAttributes != null) template.getText(templateAttributes) else template.text);
+            appendToFile(file, if (templateAttributes != null) template.getText(templateAttributes) else template.text)
         } catch (e: IOException) {
             throw ConfigurationException(e.message, e.stackTrace.toString())
         }
     }
 
     fun appendToFile(file: VirtualFile, text: String) {
-        var lineSeparator: String? = LoadTextUtil.detectLineSeparator(file, true);
-        if (lineSeparator == null) {
-            lineSeparator = CodeStyleSettingsManager.getSettings(ProjectManagerEx.getInstanceEx().defaultProject).lineSeparator
-        }
-        val existingText = StringUtil.trimTrailing(VfsUtilCore.loadText(file));
-        val content = (if (StringUtil.isNotEmpty(existingText)) existingText + lineSeparator else "") + StringUtil.convertLineSeparators(text, lineSeparator!!)
+        val lineSeparator: String = LoadTextUtil.detectLineSeparator(file, true) ?: CodeStyleSettingsManager.getSettings(ProjectManagerEx.getInstanceEx().defaultProject).lineSeparator
+        val existingText = VfsUtilCore.loadText(file).trimEnd()
+        val content = (if (existingText.isNullOrEmpty()) "" else existingText + lineSeparator) + StringUtil.convertLineSeparators(text, lineSeparator)
         VfsUtil.saveText(file, content)
     }
 
-    lateinit var wizardContext: WizardContext
-
     override fun createWizardSteps(wizardContext: WizardContext, modulesProvider: ModulesProvider): Array<out ModuleWizardStep>? {
-        this.wizardContext = wizardContext
-
-        return arrayOf(
-                IPGWizardOptionsStep(wizardContext, this),
+        return arrayOf(IPGWizardOptionsStep(wizardContext, this),
                 ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
     }
 
