@@ -146,7 +146,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     }
 
     fun setupGradleSettingsFile(rootProjectPath: String, modelContentRootDir: VirtualFile, projectName: String, moduleName: String, renderNewFile: Boolean): VirtualFile? {
-        var file: VirtualFile = getOrCreateExternalProjectConfigFile(rootProjectPath, GradleConstants.SETTINGS_FILE_NAME) ?: return null
+        val file: VirtualFile = getOrCreateExternalProjectConfigFile(rootProjectPath, GradleConstants.SETTINGS_FILE_NAME) ?: return null
         val moduleDirName = VfsUtilCore.getRelativePath(modelContentRootDir, file.parent, '/')
         val attributes = hashMapOf<String, String?>()
         attributes.put(TEMPLATE_ATTRIBUTE_PROJECT_NAME, projectName)
