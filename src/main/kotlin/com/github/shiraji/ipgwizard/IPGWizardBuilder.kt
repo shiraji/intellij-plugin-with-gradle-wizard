@@ -40,9 +40,10 @@ import java.io.IOException
 class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(ProjectSystemId("Intellij Plugin with Gradle"), GradleProjectSettings()) {
 
     val TEMPLATE_GRADLE_SETTINGS = "Gradle Settings.gradle"
-    val TEMPLATE_PLUGIN_XML = "Plugin.xml"
-    val TEMPLATE_RUNIDEA_XML = "runIdea.xml"
-    val TEMPLATE_BUILDPLUNGIN_XML = "buildPlugin.xml"
+    val TEMPLATE_PLUGIN_XML = "IPGWizard_Plugin.xml"
+    val TEMPLATE_RUNIDEA_XML = "IPGWizard_runIdea.xml"
+    val TEMPLATE_BUILDPLUNGIN_XML = "IPGWizard_buildPlugin.xml"
+    val TEMPLATE_BUILD_GRADLE = "IPGWizard_Gradle Build Script.gradle"
 
     // DO NOT CHANGE
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME"
@@ -175,7 +176,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             put(TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION, gradlePluginVersion)
             put(TEMPLATE_ATTRIBUTE_LANGUAGE, language)
         }
-        saveFile(file, "Gradle Build Script2", attributes)
+        saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file
     }
 
