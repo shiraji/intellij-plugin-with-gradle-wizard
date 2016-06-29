@@ -2,11 +2,15 @@
 
 IntelliJ plugin that adds a wizard that creates a plugin module with [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 
+![language](website/images/language.png)
+
+![options](website/images/options.png)
+
 # Limitations
 
-* Only Java/Kotlin support. (Help me find a way to create a plugin using Groovy/Scala)
+* Only Java/Kotlin support. (Help me find a way to create a plugin using Groovy, Scala or any other languages)
 * Missing some options of [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin)
-* Help(?) button does not work!
+* Help(?) button does not work
 
 # How to install?
 
