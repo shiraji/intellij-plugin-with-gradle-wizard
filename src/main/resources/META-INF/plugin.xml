@@ -12,6 +12,7 @@
 
     <idea-version since-build="143"/>
 
+    <depends>com.intellij.modules.lang</depends>
     <depends>org.jetbrains.kotlin</depends>
     <depends>DevKit</depends>
     <depends>org.jetbrains.plugins.gradle</depends>
