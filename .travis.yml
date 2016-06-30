@@ -3,6 +3,8 @@ env:
   matrix:
   - IDEA_VERSION=IC-15.0.4
   - IDEA_VERSION=LATEST-EAP-SNAPSHOT
+  global:
+  - secure: EO104Iw+qK4RjMOWMxJAfPJqP06ytzI2r1Jkx/Fdcim+ksDdDSMLhztE0ED1s4AiQutGISd7tzzNyqk9/nb6j+UsRdtjNzcas4HIyiMDFe7fPbLB4ddKx0L31SFEn5WK8IVh/BmWKwXvOgxe2lqKMvO7ozZAL30jqgLm1S+K6ObnQ2bcvxbmpHgMafOynKsxfBixxBaODtqRISj/NROlVUJJvkGBZd9GZWKUfc9rGLcPfzAPYrMBfxqsT/Ch4KMzC4UnNCjocWBE2UqQhsPLhYJW+juwfip7m8mBaiTjdshnr5SKKPQQLdL6LjJIqI2TWh0VLbLATGFzEsUsU6Uo+z1AnFr/+7uBgDcsSEYQRUQXKam8+kU4M18vqGLt+s+Qm+KnDSC7rgstLvYuKugYXj+xi3HkBUZckXHHX25lR+chAFp8cDfyVzbKho8WxVwzg/iou/Hmg6pcWy2y9omJNWdvooHwk+hiMYmwvrKeSyNbvWxM0rdKkG0xMwgC/87eX2nTARrXw319hht6ZG38byalxtpx+smyFV1kniaClnCOZuKWMicYDTLohmK7bqVPbL6l7Es2Wj3eHT6InPKac7V6gR1f+4eSXw50YN/CP5H6Z8Kcsc6g5v7R6lf/F5pg5GPL+bBTkkxxmfBvQmV5dqFMMTzrp/zE1AzV9G6/9PM=
 jdk:
 - oraclejdk7
 - oraclejdk8
