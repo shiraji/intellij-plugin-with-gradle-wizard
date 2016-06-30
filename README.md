@@ -6,9 +6,13 @@ IntelliJ plugin that adds a wizard that creates a plugin module with [gradle-int
 
 * Create New Project
 * Choose SDK and language
+
 ![language](website/images/language.png)
+
 * Choose options for gradle-intellij-plugin
+
 ![options](website/images/options.png)
+
 * Choose gradle settings
 * Done!
 
