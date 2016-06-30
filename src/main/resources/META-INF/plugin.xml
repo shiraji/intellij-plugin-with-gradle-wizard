@@ -8,6 +8,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
+        <p>1.0.1</p>
+        <ul>
+          <li>Change plugin name</li>
+          <li>Add a feature that create package based on plugin id #6</li>
+        </ul>
         <p>1.0.0</p>
         <ul>
           <li>Initial release</li>
