@@ -1,6 +1,6 @@
 <idea-plugin version="2">
     <id>com.github.shiraji.ipgwizard</id>
-    <name>Intellij Plugin with Gradle Wizard</name>
+    <name>gradle-intellij-plugin wizard</name>
     <vendor email="isogai.shiraji@gmail.com" url="https://github.com/shiraji">Shiraji</vendor>
 
     <description><![CDATA[

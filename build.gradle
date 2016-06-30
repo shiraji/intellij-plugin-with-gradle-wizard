@@ -21,7 +21,7 @@ targetCompatibility = JavaVersion.VERSION_1_6
 intellij {
     version '2016.1.3'
     plugins = ['Kotlin', 'devkit', 'gradle']
-    pluginName 'Intellij Plugin with Gradle Wizard'
+    pluginName 'gradle-intellij-plugin wizard'
 
     updateSinceUntilBuild = false
     sameSinceUntilBuild = false
