@@ -132,7 +132,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
         val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaSourceRootType.SOURCE)
 
-        VfsUtil.createDirectories(resourceRootPath)
+        VfsUtil.createDirectories("$resourceRootPath/${pluginId.replace(".", "/")}")
     }
 
     fun setupPluginFile(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile): VirtualFile? {
