@@ -1,4 +1,4 @@
-# Intellij Plugin with Gradle Wizard
+# gradle-intellij-plugin wizard
 
 IntelliJ plugin that adds a wizard that creates a plugin module with [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 
