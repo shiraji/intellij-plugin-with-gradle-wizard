@@ -20,6 +20,10 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private JTextField vendorEmail;
     private JTextField vendorUrl;
     private JTextField vendorName;
+    private JCheckBox updateSinceUntilBuild;
+    private JCheckBox sameSinceUntilBuild;
+    private JComboBox intellijVersionType;
+    private JCheckBox instrumentCode;
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
