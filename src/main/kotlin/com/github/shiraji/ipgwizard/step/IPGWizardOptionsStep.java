@@ -5,7 +5,6 @@ import com.github.shiraji.ipgwizard.config.IPGWizardConfig;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 
 import javax.swing.*;
@@ -64,8 +63,6 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
     @Override
     public void updateDataModel() {
-        Project project = wizardContext.getProject();
-
         String text = version.getText();
         builder.setGradlePluginVersion(text);
         IPGWizardConfig.setGradlePluginVersion(text);
