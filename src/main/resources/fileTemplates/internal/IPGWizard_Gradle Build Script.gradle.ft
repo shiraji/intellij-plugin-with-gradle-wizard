@@ -33,6 +33,9 @@ intellij {
 #if (${SAME_SINCE_UNTIL_BUILD} && ${SAME_SINCE_UNTIL_BUILD} != "")
     sameSinceUntilBuild = ${SAME_SINCE_UNTIL_BUILD}
 #end
+#if (${INSTRUMENT_CODE} && ${INSTRUMENT_CODE} != "")
+    instrumentCode = ${INSTRUMENT_CODE}
+#end
 }
 
 group '${PLUGIN_ID}'

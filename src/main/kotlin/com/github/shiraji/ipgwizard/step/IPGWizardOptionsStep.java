@@ -105,6 +105,10 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         boolean sameSinceUntilBuildSelected = sameSinceUntilBuild.isSelected();
         builder.setSameSinceUntilBuild(sameSinceUntilBuildSelected);
         IPGWizardConfig.setSameSinceUntilBuild(sameSinceUntilBuildSelected);
+
+        boolean instrumentCodeSelected = instrumentCode.isSelected();
+        builder.setInstrumentCode(instrumentCodeSelected);
+        IPGWizardConfig.setInstrumentCode(instrumentCodeSelected);
     }
 
     @Override
