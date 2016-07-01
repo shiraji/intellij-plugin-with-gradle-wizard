@@ -17,6 +17,9 @@ object IPGWizardConfig {
     const val SAMESINCEUNILBUILD = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.SAMESINCEUNILBUILD"
     const val INSTRUMENT_CODE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.INSTRUMENT_CODE"
     const val INTELLIJ_VERSION_TYPE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.INTELLIJ_VERSION_TYPE"
+    const val PUBLISH_USERNAME = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_USERNAME"
+    const val PUBLISH_CHANNEL = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_CHANNEL"
+
 
     @JvmStatic fun setPluginId(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_ID_KEY, value)
     @JvmStatic fun setPluginName(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_NAME_KEY, value)
@@ -36,6 +39,14 @@ object IPGWizardConfig {
     var intellijVersionType: String?
         @JvmStatic get() = PropertiesComponent.getInstance().getValue(INTELLIJ_VERSION_TYPE)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(INTELLIJ_VERSION_TYPE, value)
+
+    var publishUsername: String?
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(PUBLISH_USERNAME)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(PUBLISH_USERNAME, value)
+
+    var publishChannel: String?
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(PUBLISH_CHANNEL)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(PUBLISH_CHANNEL, value)
 
     @JvmStatic fun getPluginId() = PropertiesComponent.getInstance().getValue(PLUGIN_ID_KEY)
     @JvmStatic fun getPluginName() = PropertiesComponent.getInstance().getValue(PLUGIN_NAME_KEY)

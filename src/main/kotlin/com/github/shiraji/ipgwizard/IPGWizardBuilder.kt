@@ -63,6 +63,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD = "SAME_SINCE_UNTIL_BUILD"
     val TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE = "INSTRUMENT_CODE"
     val TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE = "INTELLIJ_VERSION_TYPE"
+    val TEMPLATE_ATTRIBUTE_PUBLISH_NAME = "PUBLISH_NAME"
+    val TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL = "PUBLISH_CHANNEL"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -85,6 +87,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var isSameSinceUntilBuild: Boolean = false
     var isInstrumentCode = true
     var intellijVersionType = ""
+    var publishName = ""
+    var publishChannel = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -188,6 +192,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             if (isSameSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD, isSameSinceUntilBuild.toString())
             if (!isInstrumentCode) put(TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE, isInstrumentCode.toString())
             if (intellijVersionType.isNotBlank() && !intellijVersionType.equals("IC")) put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE, intellijVersionType)
+            if (publishName.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_NAME, publishName)
+            if (publishChannel.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL, publishChannel)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file

@@ -25,6 +25,8 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private JCheckBox sameSinceUntilBuild;
     private JComboBox intellijVersionType;
     private JCheckBox instrumentCode;
+    private JTextField publishUsername;
+    private JTextField publishChannel;
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
@@ -131,6 +133,18 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         text = (String) intellijVersionType.getSelectedItem();
         builder.setIntellijVersionType(text);
         IPGWizardConfig.setIntellijVersionType(text);
+
+        text = publishUsername.getText();
+        if (text != null) {
+            builder.setPublishName(text);
+            IPGWizardConfig.setPublishUsername(text);
+        }
+
+        text = publishChannel.getText();
+        if (text != null) {
+            builder.setPublishChannel(text);
+            IPGWizardConfig.setPublishChannel(text);
+        }
     }
 
     @Override

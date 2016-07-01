@@ -39,6 +39,19 @@ intellij {
 #if (${INSTRUMENT_CODE} && ${INSTRUMENT_CODE} != "")
     instrumentCode = ${INSTRUMENT_CODE}
 #end
+#if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "" || ${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
+    publish {
+#if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "")
+        username '${PUBLISH_NAME}'
+#else
+        username '' // please fill in
+#end
+        password '' // please fill in
+#if (${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
+        channel '${PUBLISH_CHANNEL}'
+#end
+    }
+#end
 }
 
 group '${PLUGIN_ID}'
