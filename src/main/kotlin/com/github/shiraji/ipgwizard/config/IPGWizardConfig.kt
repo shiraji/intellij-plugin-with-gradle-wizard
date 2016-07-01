@@ -13,6 +13,7 @@ object IPGWizardConfig {
     const val VENDOR_NAME = "com.github.shiraji.foo.vendorname"
     const val GRADLE_PLUGIN_VERSION = "com.github.shiraji.foo.gradlepluginversion"
     const val INTELLIJ_VERSION = "com.github.shiraji.foo.intellijversion"
+    const val SETUPDATESINCEUNTILBUILD = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.SETUPDATESINCEUNTILBUILD"
 
     @JvmStatic fun setPluginId(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_ID_KEY, value)
     @JvmStatic fun setPluginName(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_NAME_KEY, value)
@@ -22,6 +23,7 @@ object IPGWizardConfig {
     @JvmStatic fun setVendorName(value: String) = PropertiesComponent.getInstance().setValue(VENDOR_NAME, value)
     @JvmStatic fun setGradlePluginVersion(value: String) = PropertiesComponent.getInstance().setValue(GRADLE_PLUGIN_VERSION, value)
     @JvmStatic fun setIntellijVersion(value: String) = PropertiesComponent.getInstance().setValue(INTELLIJ_VERSION, value)
+    @JvmStatic fun setUpdateSinceUntilBuild(value: Boolean) = PropertiesComponent.getInstance().setValue(SETUPDATESINCEUNTILBUILD, value)
 
     @JvmStatic fun getPluginId() = PropertiesComponent.getInstance().getValue(PLUGIN_ID_KEY)
     @JvmStatic fun getPluginName() = PropertiesComponent.getInstance().getValue(PLUGIN_NAME_KEY)
@@ -31,4 +33,5 @@ object IPGWizardConfig {
     @JvmStatic fun getVendorName() = PropertiesComponent.getInstance().getValue(VENDOR_NAME)
     @JvmStatic fun getGradlePluginVersion() = PropertiesComponent.getInstance().getValue(GRADLE_PLUGIN_VERSION)
     @JvmStatic fun getIntellijVersion() = PropertiesComponent.getInstance().getValue(INTELLIJ_VERSION)
+    @JvmStatic fun isUpdateSinceUntilBuild() = PropertiesComponent.getInstance().getBoolean(SETUPDATESINCEUNTILBUILD)
 }

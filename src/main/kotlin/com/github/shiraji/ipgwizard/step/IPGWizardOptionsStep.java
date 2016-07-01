@@ -54,6 +54,8 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
         text = IPGWizardConfig.getVendorUrl();
         if (text != null) vendorUrl.setText(text);
+
+        updateSinceUntilBuild.setSelected(IPGWizardConfig.isUpdateSinceUntilBuild());
     }
 
     @Override
@@ -94,6 +96,10 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         text = vendorUrl.getText();
         builder.setVendorUrl(text);
         IPGWizardConfig.setVendorUrl(text);
+
+        boolean updateSinceUntilBuildSelected = updateSinceUntilBuild.isSelected();
+        builder.setUpdateSinceUntilBuild(updateSinceUntilBuildSelected);
+        IPGWizardConfig.setUpdateSinceUntilBuild(updateSinceUntilBuildSelected);
     }
 
     @Override
