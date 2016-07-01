@@ -5,14 +5,14 @@ package com.github.shiraji.ipgwizard.config
 import com.intellij.ide.util.PropertiesComponent
 
 object IPGWizardConfig {
-    val PLUGIN_ID_KEY = "com.github.shiraji.foo.pluginid"
-    val PLUGIN_NAME_KEY = "com.github.shiraji.foo.pluginname"
-    val PLUGIN_VERSION_KEY = "com.github.shiraji.foo.pluginversion"
-    val VENDOR_EMAIL = "com.github.shiraji.foo.vendoremail"
-    val VENDOR_URL = "com.github.shiraji.foo.vendorurl"
-    val VENDOR_NAME = "com.github.shiraji.foo.vendorname"
-    val GRADLE_PLUGIN_VERSION = "com.github.shiraji.foo.gradlepluginversion"
-    val INTELLIJ_VERSION = "com.github.shiraji.foo.intellijversion"
+    const val PLUGIN_ID_KEY = "com.github.shiraji.foo.pluginid"
+    const val PLUGIN_NAME_KEY = "com.github.shiraji.foo.pluginname"
+    const val PLUGIN_VERSION_KEY = "com.github.shiraji.foo.pluginversion"
+    const val VENDOR_EMAIL = "com.github.shiraji.foo.vendoremail"
+    const val VENDOR_URL = "com.github.shiraji.foo.vendorurl"
+    const val VENDOR_NAME = "com.github.shiraji.foo.vendorname"
+    const val GRADLE_PLUGIN_VERSION = "com.github.shiraji.foo.gradlepluginversion"
+    const val INTELLIJ_VERSION = "com.github.shiraji.foo.intellijversion"
 
     @JvmStatic fun setPluginId(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_ID_KEY, value)
     @JvmStatic fun setPluginName(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_NAME_KEY, value)
