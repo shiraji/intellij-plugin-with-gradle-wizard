@@ -26,6 +26,9 @@ targetCompatibility = JavaVersion.VERSION_1_6
 
 intellij {
     version '${INTELLIJ_VERSION}'
+#if (${INTELLIJ_VERSION_TYPE} && ${INTELLIJ_VERSION_TYPE} != "IC")
+    type '${INTELLIJ_VERSION_TYPE}'
+#end
     pluginName '${PLUGIN_NAME}'
 #if (${UPDATE_SINCE_UNTIL_BUILD} && ${UPDATE_SINCE_UNTIL_BUILD} != "")
     updateSinceUntilBuild = ${UPDATE_SINCE_UNTIL_BUILD}

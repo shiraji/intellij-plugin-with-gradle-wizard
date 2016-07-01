@@ -8,6 +8,8 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable {
     private JTextField version;
@@ -26,6 +28,11 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
+
+    private List<String> intellijVersionTypes = new ArrayList<String>() {{
+        add("IC");
+        add("IU");
+    }};
 
     public IPGWizardOptionsStep(WizardContext wizardContext, IPGWizardBuilder builder) {
         this.wizardContext = wizardContext;
@@ -57,6 +64,17 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
         updateSinceUntilBuild.setSelected(IPGWizardConfig.isUpdateSinceUntilBuild());
         sameSinceUntilBuild.setSelected(IPGWizardConfig.isSameSinceUntilBuild());
+
+        for (String versionType : intellijVersionTypes) {
+            intellijVersionType.addItem(versionType);
+        }
+
+        text = IPGWizardConfig.getIntellijVersionType();
+        if (text == null) {
+            intellijVersionType.setSelectedIndex(0);
+        } else {
+            intellijVersionType.setSelectedItem(text);
+        }
     }
 
     @Override
@@ -109,6 +127,10 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         boolean instrumentCodeSelected = instrumentCode.isSelected();
         builder.setInstrumentCode(instrumentCodeSelected);
         IPGWizardConfig.setInstrumentCode(instrumentCodeSelected);
+
+        text = (String) intellijVersionType.getSelectedItem();
+        builder.setIntellijVersionType(text);
+        IPGWizardConfig.setIntellijVersionType(text);
     }
 
     @Override

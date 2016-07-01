@@ -16,6 +16,7 @@ object IPGWizardConfig {
     const val SETUPDATESINCEUNTILBUILD = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.SETUPDATESINCEUNTILBUILD"
     const val SAMESINCEUNILBUILD = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.SAMESINCEUNILBUILD"
     const val INSTRUMENT_CODE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.INSTRUMENT_CODE"
+    const val INTELLIJ_VERSION_TYPE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.INTELLIJ_VERSION_TYPE"
 
     @JvmStatic fun setPluginId(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_ID_KEY, value)
     @JvmStatic fun setPluginName(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_NAME_KEY, value)
@@ -31,6 +32,10 @@ object IPGWizardConfig {
     var instrumentCode: Boolean
         @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(INSTRUMENT_CODE, value)
+
+    var intellijVersionType: String?
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(INTELLIJ_VERSION_TYPE)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(INTELLIJ_VERSION_TYPE, value)
 
     @JvmStatic fun getPluginId() = PropertiesComponent.getInstance().getValue(PLUGIN_ID_KEY)
     @JvmStatic fun getPluginName() = PropertiesComponent.getInstance().getValue(PLUGIN_NAME_KEY)

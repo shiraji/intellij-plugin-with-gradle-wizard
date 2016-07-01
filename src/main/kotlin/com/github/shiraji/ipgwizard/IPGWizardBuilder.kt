@@ -62,6 +62,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD = "UPDATE_SINCE_UNTIL_BUILD"
     val TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD = "SAME_SINCE_UNTIL_BUILD"
     val TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE = "INSTRUMENT_CODE"
+    val TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE = "INTELLIJ_VERSION_TYPE"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -83,6 +84,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var isUpdateSinceUntilBuild: Boolean = true
     var isSameSinceUntilBuild: Boolean = false
     var isInstrumentCode = true
+    var intellijVersionType = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -185,6 +187,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             if (!isUpdateSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD, isUpdateSinceUntilBuild.toString())
             if (isSameSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD, isSameSinceUntilBuild.toString())
             if (!isInstrumentCode) put(TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE, isInstrumentCode.toString())
+            if (intellijVersionType.isNotBlank() && !intellijVersionType.equals("IC")) put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE, intellijVersionType)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file
