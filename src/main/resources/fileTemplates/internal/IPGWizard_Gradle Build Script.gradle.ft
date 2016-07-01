@@ -30,6 +30,9 @@ intellij {
 #if (${UPDATE_SINCE_UNTIL_BUILD} && ${UPDATE_SINCE_UNTIL_BUILD} != "")
     updateSinceUntilBuild = ${UPDATE_SINCE_UNTIL_BUILD}
 #end
+#if (${SAME_SINCE_UNTIL_BUILD} && ${SAME_SINCE_UNTIL_BUILD} != "")
+    sameSinceUntilBuild = ${SAME_SINCE_UNTIL_BUILD}
+#end
 }
 
 group '${PLUGIN_ID}'

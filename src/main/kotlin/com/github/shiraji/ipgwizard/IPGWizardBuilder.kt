@@ -60,6 +60,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_VENDOR_URL = "VENDOR_URL"
     val TEMPLATE_ATTRIBUTE_LANGUAGE = "LANGUAGE"
     val TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD = "UPDATE_SINCE_UNTIL_BUILD"
+    val TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD = "SAME_SINCE_UNTIL_BUILD"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -79,6 +80,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var language: String = ""
 
     var isUpdateSinceUntilBuild: Boolean = true
+    var isSameSinceUntilBuild: Boolean = false
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
         if (contentEntryPath.isNullOrEmpty()) return
@@ -178,6 +180,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             put(TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION, gradlePluginVersion)
             put(TEMPLATE_ATTRIBUTE_LANGUAGE, language)
             if (!isUpdateSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD, isUpdateSinceUntilBuild.toString())
+            if (isSameSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD, isSameSinceUntilBuild.toString())
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file
