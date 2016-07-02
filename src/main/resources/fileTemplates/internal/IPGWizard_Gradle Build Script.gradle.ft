@@ -39,6 +39,12 @@ intellij {
 #if (${INSTRUMENT_CODE} && ${INSTRUMENT_CODE} != "")
     instrumentCode = ${INSTRUMENT_CODE}
 #end
+#if (${DOWNLOAD_SOURCE} && ${DOWNLOAD_SOURCE} != "")
+    downloadSources = ${DOWNLOAD_SOURCE}
+#end
+#if (${ALTERNATIVE_IDE_PATH} && ${ALTERNATIVE_IDE_PATH} != "")
+    alternativeIdePath = '${ALTERNATIVE_IDE_PATH}'
+#end
 #if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "" || ${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
     publish {
 #if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "")

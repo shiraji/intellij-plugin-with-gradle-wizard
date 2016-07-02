@@ -19,7 +19,8 @@ object IPGWizardConfig {
     const val INTELLIJ_VERSION_TYPE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.INTELLIJ_VERSION_TYPE"
     const val PUBLISH_USERNAME = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_USERNAME"
     const val PUBLISH_CHANNEL = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_CHANNEL"
-
+    const val ALTERNATIVE_IDE_PATH = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.ALTERNATIVE_IDE_PATH"
+    const val DOWNLOAD_SOURCE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.DOWNLOAD_SOURCE"
 
     @JvmStatic fun setPluginId(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_ID_KEY, value)
     @JvmStatic fun setPluginName(value: String) = PropertiesComponent.getInstance().setValue(PLUGIN_NAME_KEY, value)
@@ -47,6 +48,14 @@ object IPGWizardConfig {
     var publishChannel: String?
         @JvmStatic get() = PropertiesComponent.getInstance().getValue(PUBLISH_CHANNEL)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(PUBLISH_CHANNEL, value)
+
+    var downloadSource: Boolean
+        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(DOWNLOAD_SOURCE)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(DOWNLOAD_SOURCE, value)
+
+    var alternativeIdePath: String?
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(ALTERNATIVE_IDE_PATH)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(ALTERNATIVE_IDE_PATH, value)
 
     @JvmStatic fun getPluginId() = PropertiesComponent.getInstance().getValue(PLUGIN_ID_KEY)
     @JvmStatic fun getPluginName() = PropertiesComponent.getInstance().getValue(PLUGIN_NAME_KEY)

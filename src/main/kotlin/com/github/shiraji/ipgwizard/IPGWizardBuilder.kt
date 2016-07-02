@@ -65,6 +65,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE = "INTELLIJ_VERSION_TYPE"
     val TEMPLATE_ATTRIBUTE_PUBLISH_NAME = "PUBLISH_NAME"
     val TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL = "PUBLISH_CHANNEL"
+    val TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE"
+    val TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH = "ALTERNATIVE_IDE_PATH"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -89,6 +91,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var intellijVersionType = ""
     var publishName = ""
     var publishChannel = ""
+    var isDownloadSource = true
+    var alternativeIdePath = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -194,6 +198,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             if (intellijVersionType.isNotBlank() && !intellijVersionType.equals("IC")) put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE, intellijVersionType)
             if (publishName.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_NAME, publishName)
             if (publishChannel.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL, publishChannel)
+            if (!isDownloadSource) put(TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE, isDownloadSource.toString())
+            if (alternativeIdePath.isNotBlank()) put(TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH, alternativeIdePath)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file

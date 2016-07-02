@@ -5,6 +5,9 @@ import com.github.shiraji.ipgwizard.config.IPGWizardConfig;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.ui.TextComponentAccessor;
+import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.Disposer;
 
 import javax.swing.*;
@@ -27,6 +30,8 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private JCheckBox instrumentCode;
     private JTextField publishUsername;
     private JTextField publishChannel;
+    private JCheckBox downloadSource;
+    private TextFieldWithBrowseButton alternativeIdePath;
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
@@ -77,6 +82,15 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         } else {
             intellijVersionType.setSelectedItem(text);
         }
+
+        alternativeIdePath.addBrowseFolderListener("IDE PATH", "Choose alternative IDE path",
+                null, new FileChooserDescriptor(true, true, false, false, false, false),
+                TextComponentAccessor.TEXT_FIELD_WHOLE_TEXT, false);
+
+        text = IPGWizardConfig.getAlternativeIdePath();
+        if (text != null) alternativeIdePath.setText(text);
+
+        downloadSource.setSelected(IPGWizardConfig.getDownloadSource());
     }
 
     @Override
@@ -144,6 +158,16 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         if (text != null) {
             builder.setPublishChannel(text);
             IPGWizardConfig.setPublishChannel(text);
+        }
+
+        boolean downloadSourceSelected = downloadSource.isSelected();
+        builder.setDownloadSource(downloadSourceSelected);
+        IPGWizardConfig.setDownloadSource(downloadSourceSelected);
+
+        text = alternativeIdePath.getText();
+        if (text != null) {
+            builder.setAlternativeIdePath(text);
+            IPGWizardConfig.setAlternativeIdePath(text);
         }
     }
 
