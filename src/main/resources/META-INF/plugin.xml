@@ -28,7 +28,7 @@
     <depends>org.jetbrains.plugins.gradle</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <moduleType id="DEMO_MODULE_TYPE" implementationClass="com.github.shiraji.ipgwizard.IPGModuleType"/>
+        <moduleType id="IPGModuleType" implementationClass="com.github.shiraji.ipgwizard.IPGModuleType"/>
     </extensions>
 
     <application-components>
