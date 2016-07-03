@@ -26,7 +26,38 @@ targetCompatibility = JavaVersion.VERSION_1_6
 
 intellij {
     version '${INTELLIJ_VERSION}'
+#if (${INTELLIJ_VERSION_TYPE} && ${INTELLIJ_VERSION_TYPE} != "IC")
+    type '${INTELLIJ_VERSION_TYPE}'
+#end
     pluginName '${PLUGIN_NAME}'
+#if (${UPDATE_SINCE_UNTIL_BUILD} && ${UPDATE_SINCE_UNTIL_BUILD} != "")
+    updateSinceUntilBuild = ${UPDATE_SINCE_UNTIL_BUILD}
+#end
+#if (${SAME_SINCE_UNTIL_BUILD} && ${SAME_SINCE_UNTIL_BUILD} != "")
+    sameSinceUntilBuild = ${SAME_SINCE_UNTIL_BUILD}
+#end
+#if (${INSTRUMENT_CODE} && ${INSTRUMENT_CODE} != "")
+    instrumentCode = ${INSTRUMENT_CODE}
+#end
+#if (${DOWNLOAD_SOURCE} && ${DOWNLOAD_SOURCE} != "")
+    downloadSources = ${DOWNLOAD_SOURCE}
+#end
+#if (${ALTERNATIVE_IDE_PATH} && ${ALTERNATIVE_IDE_PATH} != "")
+    alternativeIdePath = '${ALTERNATIVE_IDE_PATH}'
+#end
+#if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "" || ${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
+    publish {
+#if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "")
+        username '${PUBLISH_NAME}'
+#else
+        username '' // please fill in
+#end
+        password '' // please fill in
+#if (${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
+        channel '${PUBLISH_CHANNEL}'
+#end
+    }
+#end
 }
 
 group '${PLUGIN_ID}'

@@ -59,6 +59,14 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_VENDOR_NAME = "VENDOR_NAME"
     val TEMPLATE_ATTRIBUTE_VENDOR_URL = "VENDOR_URL"
     val TEMPLATE_ATTRIBUTE_LANGUAGE = "LANGUAGE"
+    val TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD = "UPDATE_SINCE_UNTIL_BUILD"
+    val TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD = "SAME_SINCE_UNTIL_BUILD"
+    val TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE = "INSTRUMENT_CODE"
+    val TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE = "INTELLIJ_VERSION_TYPE"
+    val TEMPLATE_ATTRIBUTE_PUBLISH_NAME = "PUBLISH_NAME"
+    val TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL = "PUBLISH_CHANNEL"
+    val TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE"
+    val TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH = "ALTERNATIVE_IDE_PATH"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -76,6 +84,15 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var gradlePluginVersion: String = ""
     var intellijVersion: String = ""
     var language: String = ""
+
+    var isUpdateSinceUntilBuild: Boolean = true
+    var isSameSinceUntilBuild: Boolean = false
+    var isInstrumentCode = true
+    var intellijVersionType = ""
+    var publishName = ""
+    var publishChannel = ""
+    var isDownloadSource = true
+    var alternativeIdePath = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -175,6 +192,14 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION, intellijVersion)
             put(TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION, gradlePluginVersion)
             put(TEMPLATE_ATTRIBUTE_LANGUAGE, language)
+            if (!isUpdateSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD, isUpdateSinceUntilBuild.toString())
+            if (isSameSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD, isSameSinceUntilBuild.toString())
+            if (!isInstrumentCode) put(TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE, isInstrumentCode.toString())
+            if (intellijVersionType.isNotBlank() && !intellijVersionType.equals("IC")) put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION_TYPE, intellijVersionType)
+            if (publishName.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_NAME, publishName)
+            if (publishChannel.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL, publishChannel)
+            if (!isDownloadSource) put(TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE, isDownloadSource.toString())
+            if (alternativeIdePath.isNotBlank()) put(TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH, alternativeIdePath)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file

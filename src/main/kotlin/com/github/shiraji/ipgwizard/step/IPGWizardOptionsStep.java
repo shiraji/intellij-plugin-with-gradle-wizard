@@ -5,10 +5,14 @@ import com.github.shiraji.ipgwizard.config.IPGWizardConfig;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.ui.TextComponentAccessor;
+import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.Disposer;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable {
     private JTextField version;
@@ -20,9 +24,22 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private JTextField vendorEmail;
     private JTextField vendorUrl;
     private JTextField vendorName;
+    private JCheckBox updateSinceUntilBuild;
+    private JCheckBox sameSinceUntilBuild;
+    private JComboBox intellijVersionType;
+    private JCheckBox instrumentCode;
+    private JTextField publishUsername;
+    private JTextField publishChannel;
+    private JCheckBox downloadSource;
+    private TextFieldWithBrowseButton alternativeIdePath;
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
+
+    private List<String> intellijVersionTypes = new ArrayList<String>() {{
+        add("IC");
+        add("IU");
+    }};
 
     public IPGWizardOptionsStep(WizardContext wizardContext, IPGWizardBuilder builder) {
         this.wizardContext = wizardContext;
@@ -51,6 +68,29 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
         text = IPGWizardConfig.getVendorUrl();
         if (text != null) vendorUrl.setText(text);
+
+        updateSinceUntilBuild.setSelected(IPGWizardConfig.isUpdateSinceUntilBuild());
+        sameSinceUntilBuild.setSelected(IPGWizardConfig.isSameSinceUntilBuild());
+
+        for (String versionType : intellijVersionTypes) {
+            intellijVersionType.addItem(versionType);
+        }
+
+        text = IPGWizardConfig.getIntellijVersionType();
+        if (text == null) {
+            intellijVersionType.setSelectedIndex(0);
+        } else {
+            intellijVersionType.setSelectedItem(text);
+        }
+
+        alternativeIdePath.addBrowseFolderListener("IDE PATH", "Choose alternative IDE path",
+                null, new FileChooserDescriptor(true, true, false, false, false, false),
+                TextComponentAccessor.TEXT_FIELD_WHOLE_TEXT, false);
+
+        text = IPGWizardConfig.getAlternativeIdePath();
+        if (text != null) alternativeIdePath.setText(text);
+
+        downloadSource.setSelected(IPGWizardConfig.getDownloadSource());
     }
 
     @Override
@@ -60,8 +100,6 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
     @Override
     public void updateDataModel() {
-        Project project = wizardContext.getProject();
-
         String text = version.getText();
         builder.setGradlePluginVersion(text);
         IPGWizardConfig.setGradlePluginVersion(text);
@@ -93,6 +131,44 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         text = vendorUrl.getText();
         builder.setVendorUrl(text);
         IPGWizardConfig.setVendorUrl(text);
+
+        boolean updateSinceUntilBuildSelected = updateSinceUntilBuild.isSelected();
+        builder.setUpdateSinceUntilBuild(updateSinceUntilBuildSelected);
+        IPGWizardConfig.setUpdateSinceUntilBuild(updateSinceUntilBuildSelected);
+
+        boolean sameSinceUntilBuildSelected = sameSinceUntilBuild.isSelected();
+        builder.setSameSinceUntilBuild(sameSinceUntilBuildSelected);
+        IPGWizardConfig.setSameSinceUntilBuild(sameSinceUntilBuildSelected);
+
+        boolean instrumentCodeSelected = instrumentCode.isSelected();
+        builder.setInstrumentCode(instrumentCodeSelected);
+        IPGWizardConfig.setInstrumentCode(instrumentCodeSelected);
+
+        text = (String) intellijVersionType.getSelectedItem();
+        builder.setIntellijVersionType(text);
+        IPGWizardConfig.setIntellijVersionType(text);
+
+        text = publishUsername.getText();
+        if (text != null) {
+            builder.setPublishName(text);
+            IPGWizardConfig.setPublishUsername(text);
+        }
+
+        text = publishChannel.getText();
+        if (text != null) {
+            builder.setPublishChannel(text);
+            IPGWizardConfig.setPublishChannel(text);
+        }
+
+        boolean downloadSourceSelected = downloadSource.isSelected();
+        builder.setDownloadSource(downloadSourceSelected);
+        IPGWizardConfig.setDownloadSource(downloadSourceSelected);
+
+        text = alternativeIdePath.getText();
+        if (text != null) {
+            builder.setAlternativeIdePath(text);
+            IPGWizardConfig.setAlternativeIdePath(text);
+        }
     }
 
     @Override
