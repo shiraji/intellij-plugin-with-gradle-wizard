@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin url="https://plugins.jetbrains.com/plugin/8450" version="2">
     <id>com.github.shiraji.ipgwizard</id>
     <name>gradle-intellij-plugin wizard</name>
     <vendor email="isogai.shiraji@gmail.com" url="https://github.com/shiraji">Shiraji</vendor>
@@ -8,15 +8,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        <p>1.0.1</p>
+        <p>1.1.0</p>
         <ul>
-          <li>Change plugin name</li>
-          <li>Add a feature that create package based on plugin id #6</li>
+          <li>Support some options of gradle-intellij-plugin</li>
         </ul>
-        <p>1.0.0</p>
-        <ul>
-          <li>Initial release</li>
-        </ul>
+        <p>Older version changes are listed on <a href="https://github.com/shiraji/intellij-plugin-with-gradle-wizard/blob/master/CHANGELOG.md">CHANGELOG.md</a></p>
     ]]>
     </change-notes>
 
