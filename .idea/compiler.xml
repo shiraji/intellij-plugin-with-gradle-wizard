@@ -21,6 +21,8 @@
     <bytecodeTargetLevel>
       <module name="_main" target="1.8" />
       <module name="_test" target="1.8" />
+      <module name="intellij-plugin-with-gradle-wizard_main" target="1.6" />
+      <module name="intellij-plugin-with-gradle-wizard_test" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
