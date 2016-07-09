@@ -91,6 +91,8 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         if (text != null) alternativeIdePath.setText(text);
 
         downloadSource.setSelected(IPGWizardConfig.getDownloadSource());
+
+        instrumentCode.setSelected(IPGWizardConfig.getInstrumentCode());
     }
 
     @Override
