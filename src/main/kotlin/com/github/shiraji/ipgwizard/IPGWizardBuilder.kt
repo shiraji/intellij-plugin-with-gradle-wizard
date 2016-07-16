@@ -151,7 +151,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     }
 
     private fun setupSourceDirectory(modifiableRootModel: ModifiableRootModel, modelContentRootDir: VirtualFile) {
-        val resourceRootPath = "${modelContentRootDir.path}/src/main/java"
+        val languageDirectoryName = if (language == IPGWizardSupportLanguageStep.Language.KOTLIN.name) "kotlin" else "java"
+        val resourceRootPath = "${modelContentRootDir.path}/src/main/${languageDirectoryName}"
         val contentRoot = LocalFileSystem.getInstance().findFileByPath(contentEntryPath!!)
         val contentEntry = MarkRootActionBase.findContentEntry(modifiableRootModel, contentRoot!!)
         contentEntry?.addSourceFolder(VfsUtilCore.pathToUrl(resourceRootPath), JavaSourceRootType.SOURCE)
