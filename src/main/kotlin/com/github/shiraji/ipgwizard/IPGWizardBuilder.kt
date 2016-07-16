@@ -44,6 +44,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_RUNIDEA_XML = "IPGWizard_runIdea.xml"
     val TEMPLATE_BUILDPLUNGIN_XML = "IPGWizard_buildPlugin.xml"
     val TEMPLATE_BUILD_GRADLE = "IPGWizard_Gradle Build Script.gradle"
+    val TEMPLATE_GITIGNORE = "IPGWizard_.gitignore"
 
     // DO NOT CHANGE
     val TEMPLATE_ATTRIBUTE_PROJECT_NAME = "PROJECT_NAME"
@@ -127,11 +128,17 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
         setupPluginFile(modifiableRootModel, modelContentRootDir)
         setupSourceDirectory(modifiableRootModel, modelContentRootDir)
         setupRunConfigurations(modelContentRootDir)
+        setupGitignore(modelContentRootDir)
 
         if (gradleBuildFile != null) {
             modifiableRootModel.module.putUserData(
                     BUILD_SCRIPT_DATA, BuildScriptDataBuilder(gradleBuildFile));
         }
+    }
+
+    private fun setupGitignore(modelContentRootDir: VirtualFile) {
+        val buildPluginFile: VirtualFile = getOrCreateExternalProjectConfigFile(modelContentRootDir.path, ".gitignore") ?: return
+        saveFile(buildPluginFile, TEMPLATE_GITIGNORE, hashMapOf())
     }
 
     private fun setupRunConfigurations(modelContentRootDir: VirtualFile) {
