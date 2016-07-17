@@ -53,6 +53,7 @@ intellij {
         username '' // please fill in
 #end
         password '' // please fill in
+        pluginId '' // please fill in
 #if (${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
         channel '${PUBLISH_CHANNEL}'
 #end
