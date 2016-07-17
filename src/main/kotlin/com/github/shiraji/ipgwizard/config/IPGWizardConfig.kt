@@ -34,7 +34,7 @@ object IPGWizardConfig {
     @JvmStatic fun setSameSinceUntilBuild(value: Boolean) = PropertiesComponent.getInstance().setValue(SAMESINCEUNILBUILD, value)
 
     var instrumentCode: Boolean
-        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD)
+        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD, true)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(INSTRUMENT_CODE, value)
 
     var intellijVersionType: String?
@@ -50,7 +50,7 @@ object IPGWizardConfig {
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(PUBLISH_CHANNEL, value)
 
     var downloadSource: Boolean
-        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(DOWNLOAD_SOURCE)
+        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(DOWNLOAD_SOURCE, true)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(DOWNLOAD_SOURCE, value)
 
     var alternativeIdePath: String?
@@ -65,6 +65,6 @@ object IPGWizardConfig {
     @JvmStatic fun getVendorName() = PropertiesComponent.getInstance().getValue(VENDOR_NAME)
     @JvmStatic fun getGradlePluginVersion() = PropertiesComponent.getInstance().getValue(GRADLE_PLUGIN_VERSION)
     @JvmStatic fun getIntellijVersion() = PropertiesComponent.getInstance().getValue(INTELLIJ_VERSION)
-    @JvmStatic fun isUpdateSinceUntilBuild() = PropertiesComponent.getInstance().getBoolean(SETUPDATESINCEUNTILBUILD)
-    @JvmStatic fun isSameSinceUntilBuild() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD)
+    @JvmStatic fun isUpdateSinceUntilBuild() = PropertiesComponent.getInstance().getBoolean(SETUPDATESINCEUNTILBUILD, true)
+    @JvmStatic fun isSameSinceUntilBuild() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD, false)
 }
