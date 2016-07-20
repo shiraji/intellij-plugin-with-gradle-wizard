@@ -34,7 +34,7 @@ object IPGWizardConfig {
     @JvmStatic fun setSameSinceUntilBuild(value: Boolean) = PropertiesComponent.getInstance().setValue(SAMESINCEUNILBUILD, value)
 
     var instrumentCode: Boolean
-        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD, true)
+        @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(INSTRUMENT_CODE, true)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(INSTRUMENT_CODE, value)
 
     var intellijVersionType: String?
