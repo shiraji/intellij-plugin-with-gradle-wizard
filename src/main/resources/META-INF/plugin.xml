@@ -8,9 +8,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        <p>1.1.0</p>
+        <p>1.2.0</p>
         <ul>
-          <li>Support some options of gradle-intellij-plugin</li>
+          <li>Fix problems related to saving values #10 #13</li>
+          <li>Add pluginId support #9</li>
+          <li>Add .gitignore #11</li>
         </ul>
         <p>Older version changes are listed on <a href="https://github.com/shiraji/intellij-plugin-with-gradle-wizard/blob/master/CHANGELOG.md">CHANGELOG.md</a></p>
     ]]>
