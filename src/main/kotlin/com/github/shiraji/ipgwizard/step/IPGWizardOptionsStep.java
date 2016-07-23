@@ -69,8 +69,8 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         text = IPGWizardConfig.getVendorUrl();
         if (text != null) vendorUrl.setText(text);
 
-        updateSinceUntilBuild.setSelected(IPGWizardConfig.isUpdateSinceUntilBuild());
-        sameSinceUntilBuild.setSelected(IPGWizardConfig.isSameSinceUntilBuild());
+        updateSinceUntilBuild.setSelected(IPGWizardConfig.getUpdateSinceUntilBuild());
+        sameSinceUntilBuild.setSelected(IPGWizardConfig.getSameSinceUntilBuild());
 
         for (String versionType : intellijVersionTypes) {
             intellijVersionType.addItem(versionType);
