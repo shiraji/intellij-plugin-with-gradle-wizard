@@ -8,13 +8,11 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.components.JBList;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Disposable {
     private JPanel panel;
     private JBList list;
-    private JComboBox languageComboBox;
+    private JComboBox<Language> languageComboBox;
     private WizardContext context;
     private IPGWizardBuilder builder;
 
@@ -27,6 +25,11 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
         Language(String name) {
             this.name = name;
         }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 
     static {
@@ -35,9 +38,7 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
     public IPGWizardSupportLanguageStep(WizardContext context, IPGWizardBuilder builder) {
         this.context = context;
         this.builder = builder;
-        for (Language language : Language.values()) {
-            languageComboBox.addItem(language);
-        }
+        languageComboBox.setModel(new DefaultComboBoxModel<Language>(Language.values()));
     }
 
     @Override
@@ -47,7 +48,7 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
 
     @Override
     public void updateDataModel() {
-        builder.setLanguage(Language.values()[languageComboBox.getSelectedIndex()].name);
+        builder.setLanguage(Language.values()[languageComboBox.getSelectedIndex()].toString().toLowerCase());
     }
 
     @Override
