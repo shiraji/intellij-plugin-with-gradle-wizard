@@ -1,3 +1,7 @@
+### [ver 1.3.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.3.0)
+
+* Support Kotlin source directory creation #18 Thanks to @takahirom !
+
 ### [ver 1.2.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.2.0)
 
 * Fix problems related to saving values #10 #13
