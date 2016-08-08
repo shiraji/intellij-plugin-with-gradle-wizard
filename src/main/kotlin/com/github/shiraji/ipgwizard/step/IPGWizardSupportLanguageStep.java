@@ -8,20 +8,29 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.components.JBList;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Disposable {
     private JPanel panel;
     private JBList list;
-    private JComboBox languageComboBox;
+    private JComboBox<Language> languageComboBox;
     private WizardContext context;
     private IPGWizardBuilder builder;
 
-    private List<String> languages = new ArrayList<String>() {{
-        add("Java");
-        add("Kotlin");
-    }};
+    public enum Language {
+        JAVA("Java"),
+        KOTLIN("Kotlin");
+
+        private final String name;
+
+        Language(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
 
     static {
     }
@@ -29,10 +38,7 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
     public IPGWizardSupportLanguageStep(WizardContext context, IPGWizardBuilder builder) {
         this.context = context;
         this.builder = builder;
-
-        for (String language : languages) {
-            languageComboBox.addItem(language);
-        }
+        languageComboBox.setModel(new DefaultComboBoxModel<Language>(Language.values()));
     }
 
     @Override
@@ -42,7 +48,7 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
 
     @Override
     public void updateDataModel() {
-        builder.setLanguage(languages.get(languageComboBox.getSelectedIndex()));
+        builder.setLanguage(Language.values()[languageComboBox.getSelectedIndex()].toString().toLowerCase());
     }
 
     @Override
