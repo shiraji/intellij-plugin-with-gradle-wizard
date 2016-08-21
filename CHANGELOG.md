@@ -1,3 +1,7 @@
+### [ver 1.3.1](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.3.1)
+
+* Support saving language setting #17
+
 ### [ver 1.3.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.3.0)
 
 * Support Kotlin source directory creation #18 Thanks to @takahirom !
