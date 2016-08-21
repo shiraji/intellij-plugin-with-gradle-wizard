@@ -21,6 +21,7 @@ object IPGWizardConfig {
     const val PUBLISH_CHANNEL = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_CHANNEL"
     const val ALTERNATIVE_IDE_PATH = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.ALTERNATIVE_IDE_PATH"
     const val DOWNLOAD_SOURCE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.DOWNLOAD_SOURCE"
+    const val LANGUAGE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.LANGUAGE"
 
 
     var pluginId: String?
@@ -86,4 +87,9 @@ object IPGWizardConfig {
     var sameSinceUntilBuild: Boolean
         @JvmStatic get() = PropertiesComponent.getInstance().getBoolean(SAMESINCEUNILBUILD, false)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(SAMESINCEUNILBUILD, value)
+
+    var language: Int
+        @JvmStatic get() = PropertiesComponent.getInstance().getInt(LANGUAGE, 0)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(LANGUAGE, value, 0)
+
 }
