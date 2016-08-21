@@ -15,5 +15,4 @@
 * Commit & push changes
 * Create Release Tag (Upload archive file as well)
 * Check [travis ci](https://travis-ci.org/shiraji/intellij-plugin-with-gradle-wizard) to successfully release the module
-* `rm .travis/release`
 * Prepare for next version (e.g. `version '1.0.3'` -> `version '1.0.4-SNAPSHOT'`)
