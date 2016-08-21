@@ -1,6 +1,7 @@
 package com.github.shiraji.ipgwizard.step;
 
 import com.github.shiraji.ipgwizard.IPGWizardBuilder;
+import com.github.shiraji.ipgwizard.config.IPGWizardConfig;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.Disposable;
@@ -38,7 +39,8 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
     public IPGWizardSupportLanguageStep(WizardContext context, IPGWizardBuilder builder) {
         this.context = context;
         this.builder = builder;
-        languageComboBox.setModel(new DefaultComboBoxModel<Language>(Language.values()));
+        languageComboBox.setModel(new DefaultComboBoxModel<>(Language.values()));
+        languageComboBox.setSelectedIndex(IPGWizardConfig.getLanguage());
     }
 
     @Override
@@ -48,7 +50,10 @@ public class IPGWizardSupportLanguageStep extends ModuleWizardStep implements Di
 
     @Override
     public void updateDataModel() {
-        builder.setLanguage(Language.values()[languageComboBox.getSelectedIndex()].toString().toLowerCase());
+        int selectedIndex = languageComboBox.getSelectedIndex();
+        String language = Language.values()[selectedIndex].toString().toLowerCase();
+        builder.setLanguage(language);
+        IPGWizardConfig.setLanguage(selectedIndex);
     }
 
     @Override
