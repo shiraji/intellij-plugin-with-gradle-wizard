@@ -15,8 +15,8 @@ plugins {
 apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'kotlin'
 
-sourceCompatibility = JavaVersion.VERSION_1_6
-targetCompatibility = JavaVersion.VERSION_1_6
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
 
 intellij {
     version '2016.1.3'
