@@ -68,6 +68,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL = "PUBLISH_CHANNEL"
     val TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE"
     val TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH = "ALTERNATIVE_IDE_PATH"
+    val TEMPLATE_ATTRIBUTE_JAVA_VERSION = "JAVA_VERSION"
+    val TEMPLATE_ATTRIBUTE_KOTLIN_VERSION = "KOTLIN_VERSION"
 
     val BUILD_SCRIPT_DATA = Key.create<BuildScriptDataBuilder>("gradle.module.buildScriptData")
 
@@ -85,6 +87,8 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var gradlePluginVersion: String = ""
     var intellijVersion: String = ""
     var language: String = ""
+    var javaVersion: String = ""
+    var kotlinVersion: String = ""
 
     var isUpdateSinceUntilBuild: Boolean = true
     var isSameSinceUntilBuild: Boolean = false
@@ -199,6 +203,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             put(TEMPLATE_ATTRIBUTE_INTELLIJ_VERSION, intellijVersion)
             put(TEMPLATE_ATTRIBUTE_GRADLE_PLUGIN_VERSION, gradlePluginVersion)
             put(TEMPLATE_ATTRIBUTE_LANGUAGE, language)
+            put(TEMPLATE_ATTRIBUTE_JAVA_VERSION, javaVersion)
             if (!isUpdateSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_UPDATE_SINCE_UNTIL_BUILD, isUpdateSinceUntilBuild.toString())
             if (isSameSinceUntilBuild) put(TEMPLATE_ATTRIBUTE_SAME_SINCE_UNTIL_BUILD, isSameSinceUntilBuild.toString())
             if (!isInstrumentCode) put(TEMPLATE_ATTRIBUTE_INSTRUMENT_CODE, isInstrumentCode.toString())
@@ -207,6 +212,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             if (publishChannel.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL, publishChannel)
             if (!isDownloadSource) put(TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE, isDownloadSource.toString())
             if (alternativeIdePath.isNotBlank()) put(TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH, alternativeIdePath)
+            if (kotlinVersion.isNotBlank()) put(TEMPLATE_ATTRIBUTE_KOTLIN_VERSION, kotlinVersion)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)
         return file

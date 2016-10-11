@@ -1,6 +1,6 @@
 #if (${LANGUAGE} && ${LANGUAGE} == "kotlin")
 buildscript {
-    ext.kotlin_version = '1.0.2-1'
+    ext.kotlin_version = '${KOTLIN_VERSION}'
     repositories {
         mavenCentral()
     }
@@ -17,8 +17,8 @@ plugins {
 apply plugin: 'org.jetbrains.intellij'
 apply plugin: '${LANGUAGE}'
 
-sourceCompatibility = JavaVersion.VERSION_1_6
-targetCompatibility = JavaVersion.VERSION_1_6
+sourceCompatibility = JavaVersion.${JAVA_VERSION}
+targetCompatibility = JavaVersion.${JAVA_VERSION}
 
 intellij {
     version '${INTELLIJ_VERSION}'
