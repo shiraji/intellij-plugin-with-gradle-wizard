@@ -21,7 +21,9 @@ sourceCompatibility = JavaVersion.VERSION_1_6
 targetCompatibility = JavaVersion.VERSION_1_6
 
 intellij {
+#if (${INTELLIJ_VERSION} && ${INTELLIJ_VERSION} != "")
     version '${INTELLIJ_VERSION}'
+#end
 #if (${INTELLIJ_VERSION_TYPE} && ${INTELLIJ_VERSION_TYPE} != "IC")
     type '${INTELLIJ_VERSION_TYPE}'
 #end
