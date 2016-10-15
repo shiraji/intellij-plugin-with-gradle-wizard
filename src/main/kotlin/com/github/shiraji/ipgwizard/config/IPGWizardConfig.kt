@@ -3,6 +3,7 @@
 package com.github.shiraji.ipgwizard.config
 
 import com.intellij.ide.util.PropertiesComponent
+import org.gradle.api.JavaVersion
 
 object IPGWizardConfig {
     const val PLUGIN_ID_KEY = "com.github.shiraji.foo.pluginid"
@@ -22,7 +23,8 @@ object IPGWizardConfig {
     const val ALTERNATIVE_IDE_PATH = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.ALTERNATIVE_IDE_PATH"
     const val DOWNLOAD_SOURCE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.DOWNLOAD_SOURCE"
     const val LANGUAGE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.LANGUAGE"
-
+    const val JAVA_VERSION = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.JAVA_VERSION"
+    const val KOTLIN_VERSION = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.KOTLIN_VERSION"
 
     var pluginId: String?
         @JvmStatic get() = PropertiesComponent.getInstance().getValue(PLUGIN_ID_KEY)
@@ -91,5 +93,13 @@ object IPGWizardConfig {
     var language: Int
         @JvmStatic get() = PropertiesComponent.getInstance().getInt(LANGUAGE, 0)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(LANGUAGE, value, 0)
+
+    var javaVersion: String
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(JAVA_VERSION, JavaVersion.VERSION_1_6.name)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(JAVA_VERSION, value)
+
+    var kotlinVersion: String
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(KOTLIN_VERSION, "1.0.4")
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(KOTLIN_VERSION, value)
 
 }
