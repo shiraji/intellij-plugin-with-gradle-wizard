@@ -9,7 +9,6 @@ import com.intellij.ide.util.projectWizard.WizardContext
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.externalSystem.model.ProjectSystemId
 import com.intellij.openapi.externalSystem.service.project.wizard.AbstractExternalModuleBuilder
-import com.intellij.openapi.externalSystem.service.project.wizard.ExternalModuleSettingsStep
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil
 import com.intellij.openapi.module.StdModuleTypes
 import com.intellij.openapi.options.ConfigurationException
@@ -31,7 +30,6 @@ import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 import org.jetbrains.jps.model.java.JavaResourceRootType
 import org.jetbrains.jps.model.java.JavaSourceRootType
 import org.jetbrains.plugins.gradle.frameworkSupport.BuildScriptDataBuilder
-import org.jetbrains.plugins.gradle.service.settings.GradleProjectSettingsControl
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings
 import org.jetbrains.plugins.gradle.util.GradleConstants
 import java.io.File
@@ -242,8 +240,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     }
 
     override fun createWizardSteps(wizardContext: WizardContext, modulesProvider: ModulesProvider): Array<out ModuleWizardStep>? {
-        return arrayOf(IPGWizardOptionsStep(wizardContext, this),
-                ExternalModuleSettingsStep<GradleProjectSettings>(wizardContext, this, GradleProjectSettingsControl(externalProjectSettings)))
+        return arrayOf(IPGWizardOptionsStep(wizardContext, this))
     }
 
     override fun isSuitableSdkType(sdkType: SdkTypeId?) = sdkType is JavaSdkType
