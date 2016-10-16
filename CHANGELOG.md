@@ -1,3 +1,11 @@
+### [ver 1.4.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.4.0)
+
+* Make kotlin version option #26
+* Make java target/source version option #27
+* Make runIdea singleton task #31
+* Add Intellij version blank check #30
+* Remove gradle setting step #33
+
 ### [ver 1.3.1](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.3.1)
 
 * Support saving language setting #17
