@@ -39,6 +39,7 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private List<String> intellijVersionTypes = new ArrayList<String>() {{
         add("IC");
         add("IU");
+        add("JPS");
     }};
 
     public IPGWizardOptionsStep(WizardContext wizardContext, IPGWizardBuilder builder) {
