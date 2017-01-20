@@ -66,6 +66,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     val TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL = "PUBLISH_CHANNEL"
     val TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE"
     val TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH = "ALTERNATIVE_IDE_PATH"
+    val TEMPLATE_ATTRIBUTE_IDEA_DEPENDENCY_CACHE_PATH = "IDEA_DEPENDENCY_CACHE_PATH"
     val TEMPLATE_ATTRIBUTE_JAVA_VERSION = "JAVA_VERSION"
     val TEMPLATE_ATTRIBUTE_KOTLIN_VERSION = "KOTLIN_VERSION"
 
@@ -96,6 +97,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
     var publishChannel = ""
     var isDownloadSource = true
     var alternativeIdePath = ""
+    var ideaDependencyCachePath = ""
 
     override fun setupRootModel(modifiableRootModel: ModifiableRootModel?) {
         val contentEntryPath = contentEntryPath
@@ -210,6 +212,7 @@ class IPGWizardBuilder : AbstractExternalModuleBuilder<GradleProjectSettings>(Pr
             if (publishChannel.isNotBlank()) put(TEMPLATE_ATTRIBUTE_PUBLISH_CHANNEL, publishChannel)
             if (!isDownloadSource) put(TEMPLATE_ATTRIBUTE_DOWNLOAD_SOURCE, isDownloadSource.toString())
             if (alternativeIdePath.isNotBlank()) put(TEMPLATE_ATTRIBUTE_ALTERNATIVE_IDE_PATH, alternativeIdePath)
+            if (ideaDependencyCachePath.isNotBlank()) put(TEMPLATE_ATTRIBUTE_IDEA_DEPENDENCY_CACHE_PATH, ideaDependencyCachePath)
             if (kotlinVersion.isNotBlank()) put(TEMPLATE_ATTRIBUTE_KOTLIN_VERSION, kotlinVersion)
         }
         saveFile(file, TEMPLATE_BUILD_GRADLE, attributes)

@@ -43,6 +43,9 @@ intellij {
 #if (${ALTERNATIVE_IDE_PATH} && ${ALTERNATIVE_IDE_PATH} != "")
     alternativeIdePath = '${ALTERNATIVE_IDE_PATH}'
 #end
+#if (${IDEA_DEPENDENCY_CACHE_PATH} && ${IDEA_DEPENDENCY_CACHE_PATH} != "")
+    ideaDependencyCachePath = '${IDEA_DEPENDENCY_CACHE_PATH}'
+#end
 #if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "" || ${PUBLISH_CHANNEL} && ${PUBLISH_CHANNEL} != "")
     publish {
 #if (${PUBLISH_NAME} && ${PUBLISH_NAME} != "")
