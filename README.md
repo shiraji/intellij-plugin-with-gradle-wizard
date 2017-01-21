@@ -14,6 +14,11 @@ IntelliJ plugin that adds a wizard that creates a plugin module with [gradle-int
 ![options](website/images/options.png)
 
 * Choose gradle settings
+
+* Set Plugin name
+
+![name](website/images/name.png)
+
 * Done!
 
 # Limitations
