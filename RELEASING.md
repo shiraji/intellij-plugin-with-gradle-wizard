@@ -1,4 +1,4 @@
-* `./gradlew prepareForRelease` (In case stop releasing after running this command, make sure removing `.travis/release`)
+* ``export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`;./gradlew prepareForRelease`` (In case stop releasing after running this command, make sure removing `.travis/release`)
 * Add CHANGELOG.md to what changes for new version
 * Add plugin.xml change note
 ```xml
@@ -11,6 +11,6 @@
     ]]>
     </change-notes>
 ```
-* Commit & push changes
+* `ga.;gcm "Version bump";gp`
 * Create Release Tag (Upload archive file as well)
 * Check [travis ci](https://travis-ci.org/shiraji/intellij-plugin-with-gradle-wizard) to successfully release the module
