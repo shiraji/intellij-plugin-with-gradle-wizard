@@ -1,3 +1,8 @@
+### [ver 1.4.1](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.4.1)
+
+* intellij.type for JPS- #37
+* intellij.ideaDependencyCachePath support #38
+
 ### [ver 1.4.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.4.0)
 
 * Make kotlin version option #26
