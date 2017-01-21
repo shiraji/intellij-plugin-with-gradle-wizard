@@ -32,6 +32,7 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
     private JTextField publishChannel;
     private JCheckBox downloadSource;
     private TextFieldWithBrowseButton alternativeIdePath;
+    private TextFieldWithBrowseButton ideaDependencyCachePath;
 
     private WizardContext wizardContext;
     private IPGWizardBuilder builder;
@@ -90,6 +91,13 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
 
         text = IPGWizardConfig.getAlternativeIdePath();
         if (text != null) alternativeIdePath.setText(text);
+
+        ideaDependencyCachePath.addBrowseFolderListener("IDE PATH", "Choose IDEA dependency cache path",
+                null, new FileChooserDescriptor(true, true, false, false, false, false),
+                TextComponentAccessor.TEXT_FIELD_WHOLE_TEXT, false);
+
+        text = IPGWizardConfig.getIdeaDependencyCachePath();
+        if (text != null) ideaDependencyCachePath.setText(text);
 
         downloadSource.setSelected(IPGWizardConfig.getDownloadSource());
 
@@ -171,6 +179,12 @@ public class IPGWizardOptionsStep extends ModuleWizardStep implements Disposable
         if (text != null) {
             builder.setAlternativeIdePath(text);
             IPGWizardConfig.setAlternativeIdePath(text);
+        }
+
+        text = ideaDependencyCachePath.getText();
+        if (text != null) {
+            builder.setIdeaDependencyCachePath(text);
+            IPGWizardConfig.setIdeaDependencyCachePath(text);
         }
     }
 

@@ -21,6 +21,7 @@ object IPGWizardConfig {
     const val PUBLISH_USERNAME = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_USERNAME"
     const val PUBLISH_CHANNEL = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.PUBLISH_CHANNEL"
     const val ALTERNATIVE_IDE_PATH = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.ALTERNATIVE_IDE_PATH"
+    const val IDEA_DEPENDENCY_CACHE_PATH = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.IDEA_DEPENDENCY_CACHE_PATH"
     const val DOWNLOAD_SOURCE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.DOWNLOAD_SOURCE"
     const val LANGUAGE = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.LANGUAGE"
     const val JAVA_VERSION = "com.github.shiraji.ipgwizard.config.IPGWizardConfig.JAVA_VERSION"
@@ -73,6 +74,10 @@ object IPGWizardConfig {
     var alternativeIdePath: String?
         @JvmStatic get() = PropertiesComponent.getInstance().getValue(ALTERNATIVE_IDE_PATH)
         @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(ALTERNATIVE_IDE_PATH, value)
+
+    var ideaDependencyCachePath: String?
+        @JvmStatic get() = PropertiesComponent.getInstance().getValue(IDEA_DEPENDENCY_CACHE_PATH)
+        @JvmStatic set(value) = PropertiesComponent.getInstance().setValue(IDEA_DEPENDENCY_CACHE_PATH, value)
 
     var gradlePluginVersion: String?
         @JvmStatic get() = PropertiesComponent.getInstance().getValue(GRADLE_PLUGIN_VERSION)
