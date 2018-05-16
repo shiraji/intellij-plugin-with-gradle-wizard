@@ -1,5 +1,13 @@
 # gradle-intellij-plugin wizard
 
+**Deprecated**
+
+This plugin is now deprecated because there is official support for creating gradle based intellij plugin.
+
+New Project | Gradle | IntelliJ Platform Plugin
+
+
+
 IntelliJ plugin that adds a wizard that creates a plugin module with [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 
 # How to Use?
