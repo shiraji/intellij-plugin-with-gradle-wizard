@@ -17,7 +17,7 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="143"/>
+    <idea-version since-build="143" until-build="173.*" />
 
     <depends>com.intellij.modules.lang</depends>
     <depends>org.jetbrains.kotlin</depends>
