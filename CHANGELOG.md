@@ -1,3 +1,7 @@
+### [ver 1.5.0](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.5.0)
+
+* End of supporting this plugin. This plugin features are support officially.
+
 ### [ver 1.4.1](https://github.com/shiraji/intellij-plugin-with-gradle-wizard/releases/tag/1.4.1)
 
 * intellij.type for JPS- #37
